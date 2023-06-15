@@ -1,0 +1,29 @@
+@charset "UTF-8";
+* {	box-sizing:border-box;}
+
+body {
+	margin:0;
+}
+
+.header{
+	background:#4169e1;
+	padding-left:20px;
+}
+
+.header > .container {
+	height:90px;
+	display:flex;
+	color:#fff;
+	align-items:center;
+}
+
+.title {
+	font-size:30px;
+	margin-right:20px;
+	margin-left:20px;
+}
+.logo{
+	width:100px;
+	height:80px;
+	margin-right:auto;
+}
