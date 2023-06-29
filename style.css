@@ -1,3 +1,61 @@
+@charset "UTF-8";
+
+form {
+  text-align: center;
+}
+
+.mlad{
+  font-size:25px;
+  position:relative;
+  top:140px;
+  right:170px;
+}
+
+.pswd{
+  font-size:25px;
+  position:relative;
+  top:190px;
+  right:195px;
+}
+
+.ip1{
+  position:relative;
+  top:140px;
+  width:500px;
+  height:50px;
+  outline:solid 2px red;
+}
+
+.ip2{
+  position:relative;
+  top:190px;
+  width:500px;
+  height:50px;
+  outline:solid 2px red;
+ }
+
+.rgin{
+  position:relative;
+  top:275px;
+  width:150px;
+  height:50px;
+  color: #fff;
+  background-color: #00f;
+  border-bottom: 5px solid #000088;
+}
+
+.rgin:hover{
+  margin-top: 3px;
+  color: #fff;
+  border-bottom: 2px solid #000088;
+}
+
+.new{
+  font-size:25px;
+  position:relative;
+  top:725px;
+  left:510px;
+}
 
 .RegistAccount_Aregist_form{
 	width:550px;
