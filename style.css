@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-form {
+.loginview_form {
   text-align: center;
 }
 
@@ -21,6 +21,7 @@ form {
   position: relative;
   width: 500px;
   height: 50px;
+  font-size: 100%;
 }
 
 .loginview_ip2 {
@@ -28,6 +29,7 @@ form {
   top: 50px;
   width: 500px;
   height: 50px;
+  font-size: 100%;
 }
 
 .loginview_rgin {
@@ -49,39 +51,42 @@ form {
 .loginview_new {
   font-size: 25px;
   position: relative;
-  top: 585px;
-  left: 510px;
+  top: 200px;
+  left: 500px;
 }
 
-.RegistAccount_Aregist_form {
+.RegistAccount_content {
   width: 550px;
   margin: 8rem auto;
+  font-size: 21px;
 }
 
-.RegistAccount_regist_input {
-  width: 550px;
-  height: 40px;
+.RegistAccount_ip{
+  width: 600px;
+  height: 50px;
+  font-size: 100%; /*input入力文字サイズ*/
 }
 
-.RegistAccount_regist_td td {
-  padding-top: 20px;
+.RegistAccount_td td {
+  padding-top: 30px;
 }
 
-.RegistAccount_regist_button {
+.RegistAccount_btn {
   width: 40px;
   text-align: right;
 }
 
-.RegistAccount_submit_btn {
+.RegistAccount_submit {
   color: white;
   font-size: 18px;
   background-color: blue;
-  width: 100px;
-  height: 40px;
+  width: 120px;
+  height: 50px;
   border: 0;
   border-radius: 5px;
 }
 
-.RegistAccount_submit_btn:hover {
+.RegistAccount_submit:hover {
   background-color: rgb(118, 118, 255);
 }
+
