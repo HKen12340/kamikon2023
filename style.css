@@ -4,88 +4,84 @@ form {
   text-align: center;
 }
 
-.mlad{
-  font-size:25px;
-  position:relative;
-  top:140px;
-  right:170px;
+.loginview_mlad {
+  font-size: 25px;
+  position: relative;
+  right: 170px;
 }
 
-.pswd{
-  font-size:25px;
-  position:relative;
-  top:190px;
-  right:195px;
+.loginview_pswd {
+  font-size: 25px;
+  position: relative;
+  top: 50px;
+  right: 195px;
 }
 
-.ip1{
-  position:relative;
-  top:140px;
-  width:500px;
-  height:50px;
-  outline:solid 2px red;
+.loginview_ip1 {
+  position: relative;
+  width: 500px;
+  height: 50px;
 }
 
-.ip2{
-  position:relative;
-  top:190px;
-  width:500px;
-  height:50px;
-  outline:solid 2px red;
- }
+.loginview_ip2 {
+  position: relative;
+  top: 50px;
+  width: 500px;
+  height: 50px;
+}
 
-.rgin{
-  position:relative;
-  top:275px;
-  width:150px;
-  height:50px;
+.loginview_rgin {
+  position: relative;
+  top: 135px;
+  width: 150px;
+  height: 50px;
   color: #fff;
   background-color: #00f;
-  border-bottom: 5px solid #000088;
+  border-radius: 5px;
 }
 
-.rgin:hover{
-  margin-top: 3px;
+.loginview_rgin:hover {
   color: #fff;
-  border-bottom: 2px solid #000088;
+  background-color: rgb(118, 118, 255);
+  border-radius: 5px;
 }
 
-.new{
-  font-size:25px;
-  position:relative;
-  top:725px;
-  left:510px;
+.loginview_new {
+  font-size: 25px;
+  position: relative;
+  top: 585px;
+  left: 510px;
 }
 
-.RegistAccount_Aregist_form{
-	width:550px;
-	margin: 8rem auto;
+.RegistAccount_Aregist_form {
+  width: 550px;
+  margin: 8rem auto;
 }
 
- .RegistAccount_regist_input{ 
-		width: 550px;
-		height: 40px;
- }
-
-.RegistAccount_regist_td td{ 
-	padding-top: 20px;	
+.RegistAccount_regist_input {
+  width: 550px;
+  height: 40px;
 }
 
-.RegistAccount_regist_button{
-		width: 40px;
-		text-align:right
-	}
-
-.RegistAccount_submit_btn{
-	color: white;
-	font-size: 18px;
-	background-color: blue;
-	width: 100px;
-	height: 40px;
-	border: 0;
-	border-radius: 5px;
+.RegistAccount_regist_td td {
+  padding-top: 20px;
 }
 
-.RegistAccount_submit_btn:hover{
-	background-color: rgb(118, 118, 255);
+.RegistAccount_regist_button {
+  width: 40px;
+  text-align: right;
+}
+
+.RegistAccount_submit_btn {
+  color: white;
+  font-size: 18px;
+  background-color: blue;
+  width: 100px;
+  height: 40px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.RegistAccount_submit_btn:hover {
+  background-color: rgb(118, 118, 255);
 }
