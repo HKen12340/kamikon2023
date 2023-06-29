@@ -40,7 +40,7 @@
     <header class="header">
       <div class="container">
         <div class="title">Cooking Cross</div>
-        <img class="logo" src="http://localhost/kamikon2023/components/image/sample_logo.png" alt="ロゴ">
+        <img class="logo" src="/kamikon2023/components/image/sample_logo.png" alt="ロゴ">
       </div>
     </header>
   </body>

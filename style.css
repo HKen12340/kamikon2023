@@ -56,3 +56,36 @@ form {
   top:725px;
   left:510px;
 }
+
+.RegistAccount_Aregist_form{
+	width:550px;
+	margin: 8rem auto;
+}
+
+ .RegistAccount_regist_input{ 
+		width: 550px;
+		height: 40px;
+ }
+
+.RegistAccount_regist_td td{ 
+	padding-top: 20px;	
+}
+
+.RegistAccount_regist_button{
+		width: 40px;
+		text-align:right
+	}
+
+.RegistAccount_submit_btn{
+	color: white;
+	font-size: 18px;
+	background-color: blue;
+	width: 100px;
+	height: 40px;
+	border: 0;
+	border-radius: 5px;
+}
+
+.RegistAccount_submit_btn:hover{
+	background-color: rgb(118, 118, 255);
+}
