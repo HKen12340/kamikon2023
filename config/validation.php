@@ -1,6 +1,6 @@
 <?php
 
-class validation{
+class Validation{
   private $pdo;
   
   function __construct()
@@ -24,9 +24,9 @@ class validation{
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     
     if(isset($result['mail_address'])){ 
-      return false;
+      return true;
     }
-    return true;
+    return false;
   }
 
   public function name_dupcheck($name){
@@ -37,8 +37,8 @@ class validation{
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if(isset($result['user_name'])){ 
-      return false;
+      return true;
     }
-    return true;
+    return false;
   }
 }
