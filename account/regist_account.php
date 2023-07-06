@@ -12,7 +12,6 @@
 <body>
 
   <div class="RegistAccount_content">
-
   <?php
   require('../config/user_model.php');
   require('../config/validation.php');
@@ -21,40 +20,53 @@
     $user = new User();
     $valid = new Validation();
 
-  if(!$valid->name_dupcheck($_POST['name']) && !$valid->mail_dupcheck($_POST['email'])){
-    $user->create_user($_POST['name'],$_POST['email'],$_POST['password']);
-  }
-
-  if($valid->name_dupcheck($_POST['name'])){
+    //ユーザ作成
+    if(strlen($_POST['name']) > 0 && strlen($_POST['email']) > 0){
+      if(!$valid->name_dupcheck($_POST['name']) && !$valid->mail_dupcheck($_POST['email'])){
+        $user->create_user($_POST['name'],$_POST['email'],$_POST['password']);
+        header('Location: ../login.view.php');
+      }
+    }
+  
+  //エラーメッセージ表示
+  if($valid->name_dupcheck($_POST['name']) && strlen($_POST['name']) > 0){
     print '<p>このニックネームは既に登録されています。</p>';
   }
 
-
-  if($valid->mail_dupcheck($_POST['email'])){
+  if($valid->mail_dupcheck($_POST['email']) && strlen($_POST['email']) > 0){
     print '<p>このメールアドレスは既に登録されています。</p>';
   }
 
+  if(empty($_POST['name'])){
+    print '<p>ニックネームの入力は必須です。</p>';
+  }
+
+  if(empty($_POST['email'])){
+    print '<p>メールアドレスの入力は必須です。</p>';
+  }
+
+  if(empty($_POST['password'])){
+    print '<p>メールアドレスの入力は必須です。</p>';
+  }
 }
-
 ?>
-
     <form method="post">
       <table>
         <tr class="RegistAccount_td">
           <label for="">ニックネーム</label>
         </tr>
         <tr>
-          <td><input type="text" name="name" class="RegistAccount_ip"></td>
+          <td><input type="text" name="name" class="RegistAccount_ip" required></td>
         </tr>
         <tr class="RegistAccount_td"><td><label for="">メールアドレス</label></td></tr>
         <tr>
-          <td><input type="email" name="email" class="RegistAccount_ip"></td>
+          <td><input type="email" name="email" class="RegistAccount_ip" required></td>
         </tr>
         <tr class="RegistAccount_td">
           <td><label for="">パスワード</label></td>
         </tr>
         <tr>
-          <td><input type="password" name="password" class="RegistAccount_ip"></td>
+          <td><input type="password" name="password" class="RegistAccount_ip" required></td>
         </tr>
         <tr class="RegistAccount_td">
           <td class="RegistAccount_btn">

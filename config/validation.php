@@ -16,6 +16,7 @@ class Validation{
         die();
       }
   }
+  
   public function mail_dupcheck($mail){
     $sql = 'select * from user where mail_address = :mail';
     $stmt = $this->pdo->prepare($sql);

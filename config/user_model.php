@@ -24,9 +24,13 @@ class User{
       $stmt->bindValue(':mail',$mail);
       $stmt->execute();
       $result = $stmt->fetch(PDO::FETCH_ASSOC);
-      if(password_verify($password,$result['password'])){
-        return true;
+
+      if(isset($result['password'])){
+        if(password_verify($password,$result['password'])){
+          return true;
+        }
       }
+      
       return false;
     }catch(PDOException $e){
       echo "エラーが発生しました".$e->getMessage();
