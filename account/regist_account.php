@@ -10,8 +10,35 @@
   <title>Cooking-Cross</title>
 </head>
 <body>
+
   <div class="RegistAccount_content">
-    <form action="">
+
+  <?php
+  require('../config/user_model.php');
+  require('../config/validation.php');
+
+  if(!empty($_POST)){
+    $user = new User();
+    $valid = new Validation();
+
+  if(!$valid->name_dupcheck($_POST['name']) && !$valid->mail_dupcheck($_POST['email'])){
+    $user->create_user($_POST['name'],$_POST['email'],$_POST['password']);
+  }
+
+  if($valid->name_dupcheck($_POST['name'])){
+    print '<p>このニックネームは既に登録されています。</p>';
+  }
+
+
+  if($valid->mail_dupcheck($_POST['email'])){
+    print '<p>このメールアドレスは既に登録されています。</p>';
+  }
+
+}
+
+?>
+
+    <form method="post">
       <table>
         <tr class="RegistAccount_td">
           <label for="">ニックネーム</label>
@@ -21,7 +48,7 @@
         </tr>
         <tr class="RegistAccount_td"><td><label for="">メールアドレス</label></td></tr>
         <tr>
-          <td><input type="mail" name="email" class="RegistAccount_ip"></td>
+          <td><input type="email" name="email" class="RegistAccount_ip"></td>
         </tr>
         <tr class="RegistAccount_td">
           <td><label for="">パスワード</label></td>
