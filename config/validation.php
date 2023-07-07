@@ -1,20 +1,11 @@
 <?php
+require 'db_connect.php';
 
-class Validation{
-  private $pdo;
+class Validation extends DB_connect{
   
-  function __construct()
+  public function __construct()
   {
-    $dns = 'mysql:host=localhost;dbname=ccr_db';
-      $user = 'root';
-    try{
-        $this->pdo = new PDO($dns,$user,'');
-        $this->pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        $this->pdo->query('SET NAMES utf8');  
-      }catch(PDOException $e){
-        print('エラーが発生しています:'.$e->getMessage());
-        die();
-      }
+    parent::__construct();
   }
   
   public function mail_dupcheck($mail){

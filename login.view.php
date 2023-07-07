@@ -7,14 +7,14 @@
 </head>
 <body>
 <?php 
-      require './components/header.php';	
+      require './components/header.php';
       require './config/user_model.php';
 
     if(!empty($_POST)){
       $user = new User();      
       if(strlen($_POST['email']) > 0 && strlen($_POST['password']) > 0){
         if($user->user_login($_POST['email'],$_POST['password'])){
-          header('Location: login_db.php');
+          header('Location: index.php');
         }else{
           print '<p>メールアドレスかパスワードが間違っています</p>';
         }
