@@ -1,5 +1,5 @@
 <?php
-  require('../components/header.php');
+  require('../components/simple_header.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +49,9 @@
     print '<p>メールアドレスの入力は必須です。</p>';
   }
 }
+
 ?>
+
     <form method="post">
       <table>
         <tr class="RegistAccount_td">

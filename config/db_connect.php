@@ -4,8 +4,8 @@ if(!class_exists('DB_connect')){
     const DNS = 'mysql:host=localhost;dbname=ccr_db'; 
     const DB_USER = 'root';
     const PASS = '';
-
     protected $pdo;
+    
     public function __construct()
     {
       try{

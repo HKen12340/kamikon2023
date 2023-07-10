@@ -15,12 +15,11 @@
           $stmt->bindValue($args[$i],$args[$i + 1]);
         }
         $stmt->execute();
-
         $result_arr =[];
-        while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
-          array_push($result_arr,$result);
-        }
-        return $result_arr;
+      while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
+        array_push($result_arr,$result);
+      }
+        return  $result_arr;
       }catch(PDOException $e){
           print('エラーが発生しています:'.$e->getMessage());
           die();

@@ -1,4 +1,4 @@
-<?
+<?php
 require('db_connect.php');
 
 class Recipe_model extends DB_connect{
@@ -8,18 +8,39 @@ class Recipe_model extends DB_connect{
     parent::__construct();
   }
 
-  //ここから
-  public function view_recipe(){
-    // try{
-    //   $sql = 'select * from user where id = :id';
-    //   $stmt = $this->pdo->prepare($sql);
-    //   $stmt->bindValue(':id',$id);
-    //   $stmt->execute();
-    //   $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    //   return $result;
-    // }catch(PDOException $e){
-    //   echo "エラーが発生しました".$e->getMessage();
-    // }
+ //複数のレシピを取得
+  public function get_recipeList($page_num){
+    try{
+      $num = 3 * $page_num;
+      $sql = "select * from recipe a inner join recipe_picture b on
+       a.id = b.recipe_id  limit :num ";
+      $stmt = $this->pdo->prepare($sql);
+      $stmt->bindValue(":num",(int)$num, PDO::PARAM_INT);//$numをint型に変換
+      $stmt->execute();
+      
+      $result_arr =[];
+      while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
+        array_push($result_arr,$result);
+      }
+      return $result_arr;
+    }catch(PDOException $e){
+      echo "エラーが発生しました".$e->getMessage();
+    }
+  }
+
+  //指定したレシピを取得
+  public function get_recipe($num){
+    try{
+      $sql = 'select * from recipe a inner join recipe_picture b on
+      a.id = b.recipe_id  where id = :id';
+      $stmt = $this->pdo->prepare($sql);
+      $stmt->bindValue(":id",$num);
+      $stmt->execute();
+      
+      return $stmt->fetch(PDO::FETCH_ASSOC);
+    }catch(PDOException $e){
+      echo "エラーが発生しました".$e->getMessage();
+    }
   }
 
   public function create_recipe(){
@@ -27,7 +48,6 @@ class Recipe_model extends DB_connect{
   }
 
   public function delete_recipe(){
-
+    
   }
-
 }
