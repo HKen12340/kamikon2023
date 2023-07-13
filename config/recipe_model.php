@@ -11,7 +11,7 @@ class Recipe_model extends DB_connect{
  //複数のレシピを取得
   public function get_recipeList($page_num){
     try{
-      $num = 3 * $page_num;
+      $num = 9 * $page_num;
       $sql = "select * from recipe a inner join recipe_picture b on
        a.id = b.recipe_id  limit :num ";
       $stmt = $this->pdo->prepare($sql);
@@ -44,7 +44,7 @@ class Recipe_model extends DB_connect{
   }
 
   public function create_recipe(){
-
+      
   }
 
   public function delete_recipe(){
