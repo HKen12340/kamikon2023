@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-<!--     <link rel="stylesheet" href="../style.css" type="text/css"> -->
+    <link rel="stylesheet" href="https://use.typekit.net/uhu1wwl.css">
     <title>Cooking Cross</title>
     <style>
       @charset "UTF-8";
@@ -27,13 +27,16 @@
         .title {
           margin-left: 10px;
           font-size:30px;
-          font-weight:bold;
+          font-family: lemongrass-script, sans-serif;
+          font-weight: 700;
+          font-style: normal;
+          margin-right:auto;
           padding-top: 10px;
         }
         
         .logo{
           width:110px;
-          height:70px;
+          height:65px;
           margin-right:10px;
         }
         
