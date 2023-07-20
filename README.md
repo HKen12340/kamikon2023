@@ -35,8 +35,9 @@
 |img_name|text|
 
 ### recipe_point
-|-|-|
+
 |recipe_id|int(11)|
+|-|-|
 |time_point|int(11)|
 |money_point|int(11)|
 |volume_point|int(11)|
@@ -45,13 +46,15 @@
 |vegetable_point|int(11)|
 
 ### favorite
-|-|-|
+
 |user_id|int(11)|
+|-|-|
 |recipe_id|int(11)|
 
 ### question
-|-|-|
+
 |id|int(11)|
+|-|-|
 |question|text|
 |point|int(11)|
 |point_type|int(11)|
