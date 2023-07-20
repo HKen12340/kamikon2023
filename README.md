@@ -45,10 +45,12 @@
 |vegetable_point|int(11)|
 
 ### favorite
+|-|-|
 |user_id|int(11)|
 |recipe_id|int(11)|
 
 ### question
+|-|-|
 |id|int(11)|
 |question|text|
 |point|int(11)|
