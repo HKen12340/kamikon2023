@@ -1,20 +1,11 @@
 <?php
+require 'db_connect.php';
 
-class User{
-  private $pdo;
+class User extends DB_connect{
 
-  function __construct()
+  public function __construct()
   {
-    $dns = 'mysql:host=localhost;dbname=ccr_db';
-      $user = 'root';
-    try{
-        $this->pdo = new PDO($dns,$user,'');
-        $this->pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        $this->pdo->query('SET NAMES utf8');  
-      }catch(PDOException $e){
-        print('エラーが発生しています:'.$e->getMessage());
-        die();
-      }
+    parent::__construct();
   }
 
   public function user_login($mail,$password){
@@ -24,9 +15,13 @@ class User{
       $stmt->bindValue(':mail',$mail);
       $stmt->execute();
       $result = $stmt->fetch(PDO::FETCH_ASSOC);
-      if(password_verify($password,$result['password'])){
-        return true;
+
+      if(isset($result['password'])){
+        if(password_verify($password,$result['password'])){
+          return true;
+        }
       }
+      
       return false;
     }catch(PDOException $e){
       echo "エラーが発生しました".$e->getMessage();
@@ -74,3 +69,4 @@ class User{
     } 
   }  
 }
+

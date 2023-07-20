@@ -13,7 +13,7 @@
 .loginview_pswd {
   font-size: 25px;
   position: relative;
-  top: 50px;
+  top: 10px;
   right: 195px;
 }
 
@@ -26,7 +26,6 @@
 
 .loginview_ip2 {
   position: relative;
-  top: 50px;
   width: 500px;
   height: 50px;
   font-size: 100%;
@@ -34,7 +33,7 @@
 
 .loginview_rgin {
   position: relative;
-  top: 135px;
+  top: 35px;
   width: 150px;
   height: 50px;
   color: #fff;
@@ -49,8 +48,8 @@
 .loginview_new {
   font-size: 25px;
   position: relative;
-  top: 200px;
-  left: 500px;
+  top: 100px;
+  left: 33%;
 }
 
 .question_q1 {
@@ -101,9 +100,9 @@
 }
 
 .RegistAccount_content {
-  width: 550px;
-  margin: 8rem auto;
-  font-size: 21px;
+  width: 500px;
+  margin: 3rem auto;
+  font-size: 15px;
 }
 
 .RegistAccount_ip {
@@ -113,7 +112,7 @@
 }
 
 .RegistAccount_td td {
-  padding-top: 30px;
+  padding-top: 15px;
 }
 
 .RegistAccount_btn {
