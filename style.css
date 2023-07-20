@@ -42,9 +42,7 @@
 }
 
 .loginview_rgin:hover {
-  color: #fff;
   background-color: rgb(118, 118, 255);
-  border-radius: 5px;
 }
 
 .loginview_new {
@@ -54,15 +52,62 @@
   left: 33%;
 }
 
+.question_q1 {
+  font-size: 25px;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  top: 200px;
+  left: 325px;
+  border: 2px solid rgb(100, 100, 255);
+  width: 850px;
+}
+
+.question_yes {
+  font-size: 25px;
+  text-align: center;
+  color: #fff;
+  background-color: #00f;
+  padding: 10px;
+  position: relative;
+  top: 300px;
+  left: 400px;
+  border: 2px solid rgb(100, 100, 255);
+  border-radius: 5px;
+  width: 250px;
+}
+
+.question_yes:hover {
+  background-color: rgb(118, 118, 255);
+}
+
+.question_no {
+  font-size: 25px;
+  text-align: center;
+  color: #fff;
+  background-color: #00f;
+  padding: 10px;
+  position: relative;
+  top: 300px;
+  left: 600px;
+  border: 2px solid rgb(100, 100, 255);
+  border-radius: 5px;
+  width: 250px;
+}
+
+.question_no:hover {
+  background-color: rgb(118, 118, 255);
+}
+
 .RegistAccount_content {
   width: 500px;
   margin: 3rem auto;
   font-size: 15px;
 }
 
-.RegistAccount_ip{
-  width: 500px;
-  height: 40px;
+.RegistAccount_ip {
+  width: 600px;
+  height: 50px;
   font-size: 100%; /*input入力文字サイズ*/
 }
 
@@ -88,4 +133,3 @@
 .RegistAccount_submit:hover {
   background-color: rgb(118, 118, 255);
 }
-
