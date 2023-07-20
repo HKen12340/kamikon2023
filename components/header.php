@@ -25,16 +25,16 @@
         }
 
         .title {
+          margin-left: 10px;
           font-size:30px;
           font-weight:bold;
-          margin-right:20px;
-          margin-left:20px;
+          padding-top: 10px;
         }
         
         .logo{
-          width:100px;
-          height:80px;
-          margin-right:auto;
+          width:110px;
+          height:70px;
+          margin-right:10px;
         }
         
         .hnav ul li{
@@ -58,8 +58,8 @@
   <body>
     <header class="header">
       <div class="container">
+      <img class="logo" src="/kamikon2023/components/image/sample_logo.png" alt="ロゴ">
         <h1 class="title">COOKING CROSS</h1>
-        <img class="logo" src="/kamikon2023/components/image/sample_logo.png" alt="ロゴ">
         <nav class="hnav">
           <ul>
             <li><a href="#">Myレシピ</a></li>

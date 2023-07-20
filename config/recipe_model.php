@@ -11,9 +11,10 @@ class Recipe_model extends DB_connect{
  //複数のレシピを取得
   public function get_recipeList($page_num){
     try{
-      $num = 9 * $page_num;
-      $sql = "select * from recipe a inner join recipe_picture b on
-       a.id = b.recipe_id  limit :num ";
+      $num = 6 * ($page_num - 1);
+      $sql = "select * from recipe a left join recipe_picture b on
+       a.id = b.recipe_id where Release_flag = 1 ORDER BY 
+       a.create_at DESC limit 6 offset :num";
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(":num",(int)$num, PDO::PARAM_INT);//$numをint型に変換
       $stmt->execute();
@@ -28,7 +29,7 @@ class Recipe_model extends DB_connect{
     }
   }
 
-  //指定したレシピを取得
+  //指定したレシピを取得 (途中)
   public function get_recipe($num){
     try{
       $sql = 'select * from recipe a inner join recipe_picture b on
