@@ -36,7 +36,7 @@
 |フィールド名|データ型|値|説明|
 |-|-|-|-|
 |recipe_id|int(11)|1|レシピID|
-|icon|text|/kamikon2023/upload/1.jpg|一覧ページ用の画像パス|
+|icon|text|'/kamikon2023/upload/1.jpg'|一覧ページ用の画像パス|
 |img_name|text||詳細ページ用の画像パス|
 
 ### recipe_point
@@ -58,14 +58,14 @@
 |user_id|int(11)|1|ユーザID|
 |recipe_id|int(11)|1|レシピID|
 
-### question
-
+### question(仮)
+複数ポイントに対応できていないので改良する
 |フィールド名|データ型|値|説明|
 |-|-|-|-|
 |id|int(11)|1|質問ID
-|question|text|疲れている?|質問内容|
+|question|text|'疲れている?'|質問内容|
 |point|int(11)|1|付与ポイント|
-|point_type|int(11)|time_point|ポイントタイプ|
+|point_type|int(11)|'time_point'|ポイントタイプ|
 |next_question|int(11)||関連質問(ない場合は空)|
 |category|int(11)|1|質問カテゴリー|
 
