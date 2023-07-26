@@ -8,7 +8,7 @@
 <body>
 <?php 
       require './components/simple_header.php';
-      require './config/user_model.php';
+      require './database/user_model.php';
 
     if(!empty($_POST)){
       $user = new User();      
