@@ -12,7 +12,7 @@ class Recipe_model extends DB_connect{
   public function get_recipeList($page_num){
     try{
       $num = 6 * ($page_num - 1);
-      $sql = "select * from recipe a left join recipe_picture b on
+      $sql = "select id, recipe_name, icon from recipe a left join recipe_picture b on
        a.id = b.recipe_id where Release_flag = 1 ORDER BY 
        a.create_at DESC limit 6 offset :num";
       $stmt = $this->pdo->prepare($sql);
@@ -32,7 +32,7 @@ class Recipe_model extends DB_connect{
   //指定したレシピを取得 (途中)
   public function get_recipe($num){
     try{
-      $sql = 'select * from recipe a inner join recipe_picture b on
+      $sql = 'select id, user_id, recipe_name, introductions, material_names, amounts, procedures, Release_flag, create_at from recipe a inner join recipe_picture b on
       a.id = b.recipe_id  where id = :id';
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(":id",$num);
