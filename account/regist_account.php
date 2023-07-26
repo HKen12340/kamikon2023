@@ -13,8 +13,8 @@
 
   <div class="RegistAccount_content">
   <?php
-  include('../config/user_model.php');
-  include('../config/validation.php');
+  include('../database/user_model.php');
+  include('../database/validation.php');
 
   if(!empty($_POST)){
     $user = new User();
