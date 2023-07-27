@@ -10,7 +10,7 @@
 <body>
 <div class="index_f-container">
   <?php
-  require("config/recipe_model.php");
+  require("database/recipe_model.php");
   $recipe = new Recipe_model;
   $result = $recipe->get_recipeList(1);
   foreach($result as $res){
