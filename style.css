@@ -100,34 +100,42 @@
 }
 
 .index_f-container {
-  width: 100%;
-  height: auto;
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 80%;
+  height: auto; 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .index_f-item {
-  width: 25%;
-  height: auto;
-  color: black;
-  font-size: 30px;
+  width: calc(100% / 3 - 10px) ;
+  height: 300px;
   text-align: center;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-top: 50px;
-  margin-bottom: 120px;
+  margin-left: 5px;
+  margin-top: 25px;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.2);
+}
+
+.index_f-item a{
   text-decoration: none;
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
 }
 
 .index_f-item:hover {
-  color: blue;
-  text-decoration: underline;
+    color: blue;
+    text-decoration: underline;
 }
 
 .index_f-item img {
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  height: 170px;
 }
 
 .RegistAccount_content {
@@ -185,4 +193,11 @@
   height: 280px;
   opacity: 0;
   /* display: none; */
+}
+
+footer{
+  margin-top: 50px;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(221, 217, 217);
 }

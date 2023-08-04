@@ -12,9 +12,10 @@ class Recipe_model extends DB_connect{
   public function get_recipeList($page_num){
     try{
       $num = 6 * ($page_num - 1);
-      $sql = "SELECT id, recipe_name, icon FROM recipe a LEFT JOIN recipe_picture b ON
-       a.id = b.recipe_id WHERE Release_flag = 1 ORDER BY 
-       a.create_at DESC LIMIT 6 offset :num";
+      $sql = "SELECT a.id, recipe_name, icon,user_name FROM recipe a 
+      LEFT JOIN recipe_picture b ON a.id = b.recipe_id 
+      LEFT JOIN user c ON c.id = a.user_id WHERE Release_flag = 1 ORDER BY 
+      a.create_at DESC limit 6 offset :num";
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(":num",(int)$num, PDO::PARAM_INT);//$numをint型に変換
       $stmt->execute();
