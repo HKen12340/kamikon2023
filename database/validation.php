@@ -9,7 +9,7 @@ class Validation extends DB_connect{
   }
   
   public function mail_dupcheck($mail){
-    $sql = 'select * from user where mail_address = :mail';
+    $sql = 'SELECT * FROM user WHERE mail_address = :mail';
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':mail',$mail);
     $stmt->execute();
@@ -22,7 +22,7 @@ class Validation extends DB_connect{
   }
 
   public function name_dupcheck($name){
-    $sql = 'select * from user where user_name = :name';
+    $sql = 'SELECT * FROM user WHERE user_name = :name';
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':name',$name);
     $stmt->execute();

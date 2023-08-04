@@ -12,9 +12,9 @@ class Recipe_model extends DB_connect{
   public function get_recipeList($page_num){
     try{
       $num = 6 * ($page_num - 1);
-      $sql = "select id, recipe_name, icon from recipe a left join recipe_picture b on
-       a.id = b.recipe_id where Release_flag = 1 ORDER BY 
-       a.create_at DESC limit 6 offset :num";
+      $sql = "SELECT id, recipe_name, icon FROM recipe a LEFT JOIN recipe_picture b ON
+       a.id = b.recipe_id WHERE Release_flag = 1 ORDER BY 
+       a.create_at DESC LIMIT 6 offset :num";
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(":num",(int)$num, PDO::PARAM_INT);//$numをint型に変換
       $stmt->execute();
@@ -29,12 +29,12 @@ class Recipe_model extends DB_connect{
     }
   }
 
-  //指定したレシピを取得 (途中)
+  //指定したレシピを取得 
   public function get_recipe($num){
     try{
-      $sql = 'select id, user_id, recipe_name, introductions, material_names, amounts, 
-      procedures, Release_flag, create_at from recipe a inner join recipe_picture b on
-      a.id = b.recipe_id  where id = :id';
+      $sql = 'SELECT id, user_id, recipe_name, introductions, material_names, amounts, 
+      procedures, Release_flag, create_at FROM recipe a INNER JOIN recipe_picture b ON
+      a.id = b.recipe_id  WHERE id = :id AND Release_flag = 1';
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(":id",$num);
       $stmt->execute();
@@ -45,8 +45,9 @@ class Recipe_model extends DB_connect{
     }
   }
 
-  public function create_recipe(){
-      
+  public function create_recipe($post){
+      var_dump($post);
+      var_dump($_FILES['userfile']);
   }
 
   public function update_recipe(){
@@ -58,9 +59,10 @@ class Recipe_model extends DB_connect{
 
   //最大ページ数
   public function maxpage(){
-    $sql = "SELECT CEILING(COUNT(id) / 6) AS maxpage FROM recipe";
+    $sql = "SELECT CEILING(COUNT(id) / 6) AS maxpage FROM recipe WHERE Release_flag = 1";
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
-    return $stmt->fetch(PDO::FETCH_ASSOC);    
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result['maxpage'];
   }
 }
