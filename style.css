@@ -99,6 +99,37 @@
   background-color: rgb(118, 118, 255);
 }
 
+.index_f-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.index_f-item {
+  width: 25%;
+  height: auto;
+  color: black;
+  font-size: 30px;
+  text-align: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px;
+  margin-bottom: 120px;
+  text-decoration: none;
+}
+
+.index_f-item:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+.index_f-item img {
+  width: 350px;
+  height: 350px;
+}
+
 .RegistAccount_content {
   width: 500px;
   margin: 3rem auto;
