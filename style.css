@@ -133,3 +133,25 @@
 .RegistAccount_submit:hover {
   background-color: rgb(118, 118, 255);
 }
+
+
+.RegistRecipe_Picform{
+  margin-top: 30px;
+}
+.RegistRecipe_Picform{
+  /* padding: 10px 40px; */
+  color: #ffffff;
+  background-color: #384878;
+  border: 10px dotted black;
+  border-radius: 10px;
+  width: 420px;
+  height: 300px;
+}
+
+.RegistRecipe_Picform input[type="file"] {
+  cursor: pointer;
+  width: 400px;
+  height: 280px;
+  opacity: 0;
+  /* display: none; */
+}

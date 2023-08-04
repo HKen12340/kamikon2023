@@ -7,6 +7,10 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <?php
+    require("database/recipe_model.php");
+    $recipe = new Recipe_model();
+    print($recipe->maxpage());
+  ?>
 </body>
 </html>

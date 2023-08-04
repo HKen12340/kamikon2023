@@ -10,7 +10,7 @@ class User extends DB_connect{
 
   public function user_login($mail,$password){
     try{
-      $sql = 'select * from user where mail_address = :mail';
+      $sql = 'SELECT * FROM user WHERE mail_address = :mail';
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(':mail',$mail);
       $stmt->execute();
@@ -30,7 +30,7 @@ class User extends DB_connect{
 
   public function user_info($id){
     try{
-      $sql = 'select * from user where id = :id';
+      $sql = 'SELECT * FROM user WHERE id = :id';
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(':id',$id);
       $stmt->execute();
@@ -44,9 +44,8 @@ class User extends DB_connect{
 
   public function create_user($name,$mail,$password){
     try{
-
-      $sql = 'insert user(user_name,mail_address,password) 
-      values(:name,:mail,:password)';
+      $sql = 'INSERT user(user_name,mail_address,password) 
+      VALUES(:name,:mail,:password)';
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(':name',$name);
       $stmt->bindValue(':mail',$mail);
@@ -60,7 +59,7 @@ class User extends DB_connect{
 
   public function delete_user($id){
     try{
-      $sql = 'delete from user where id = :id';
+      $sql = 'DELETE FROM user WHERE id = :id';
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(':id',$id);
       $stmt->execute();

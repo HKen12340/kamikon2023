@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php
- require('../../components/header.php'); ?>
+ require('../../components/header.php'); 
+ require('../../database/recipe_model.php');
+ if(!empty($_POST)){
+  $res = new Recipe_model();
+  $res->create_recipe($_POST); 
+  //header();
+ }
+ ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../style.css">
   <title>Document</title>
   <script src="/kamikon2023/asset/jquery-3.7.0.min.js"></script>
 </head>
 <body>
+<form enctype="multipart/form-data" method="post">
   <p>レシピ名</p>
-  <input type="text">
+  <input type="text" name="recipe_name">
   <p>紹介文</p>
 <textarea cols="50" rows="10"></textarea>
   <table class="textbox">
@@ -21,10 +30,10 @@
       <th></th>
     </tr>
     <tr>
-      <td><button class="add">追加</button></td>
+      <td><button type="button" class="add">追加</button></td>
       <td><input type="text" name="matelial[]"></td>
       <td><input type="text" name="amount[]"></td>
-      <td><button class="delete">削除</button></td>
+      <td><button type="button" class="delete">削除</button></td>
     </tr>
   </table>
   <p>調理手順</p>
@@ -33,13 +42,18 @@
     <td><p>1.</p><textarea name="prod[]" class="prod_textarea" cols="50" rows="10"></textarea></td>
   </tr>
   </table>
-  <button class="prod_add">追加</button><button class="prod_delete">削除</button>
+  <button type="button" class="prod_add">追加</button>
+  <button type="button" class="prod_delete">削除</button>
 
-  <form method="post" enctype="multipart/form-data" action="">
-     <input type="file" name="up[]" multiple>
-     <input type="submit" value="アップロード">
-   </form>
+    <div class="RegistRecipe_Picform">
+      この領域にファイルをドロップしてください
+      <input type="file" name="userfile[]" accept="image/*" multiple />
+    </div>
+
   <p id="pics"></p>
+    <input type="submit" value="送信">
+  </form>
+
   <script src="/kamikon2023/asset/file2.js"></script>
   <script>
     let count = 0;
