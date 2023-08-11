@@ -1,6 +1,3 @@
-<?php
-  require('../components/simple_header.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,32 +48,27 @@
 }
 
 ?>
-
+  <section class = "RegistAccount_Card">
+    <p class="RegistAccount_Cardtitle">ユーザー登録</p>
     <form method="post">
       <table>
-        <tr class="RegistAccount_td">
-          <label for="">ニックネーム</label>
+        <tr>
+          <td><input type="text" name="name" class="RegistAccount_ip" placeholder="ユーザー名" required></td>
         </tr>
         <tr>
-          <td><input type="text" name="name" class="RegistAccount_ip" required></td>
-        </tr>
-        <tr class="RegistAccount_td"><td><label for="">メールアドレス</label></td></tr>
-        <tr>
-          <td><input type="email" name="email" class="RegistAccount_ip" required></td>
-        </tr>
-        <tr class="RegistAccount_td">
-          <td><label for="">パスワード</label></td>
+          <td><input type="email" name="email" class="RegistAccount_ip" placeholder="メールアドレス" required></td>
         </tr>
         <tr>
-          <td><input type="password" name="password" class="RegistAccount_ip" required></td>
+          <td><input type="password" name="password" class="RegistAccount_ip" placeholder="パスワード" required></td>
         </tr>
-        <tr class="RegistAccount_td">
-          <td class="RegistAccount_btn">
-              <input type="submit" value="登録" class="RegistAccount_submit">
+        <tr>
+          <td class="RegistAccount_submit">
+              <input type="submit" value="登録">
           </td>
         </tr>
       </table>
     </form>
+    </section>
   </div>
 </body>
 </html>
