@@ -10,6 +10,7 @@ class User extends DB_connect{
 
   public function user_login($mail,$password){
     try{
+      session_start();
       $sql = 'SELECT * FROM user WHERE mail_address = :mail';
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(':mail',$mail);
@@ -18,6 +19,8 @@ class User extends DB_connect{
 
       if(isset($result['password'])){
         if(password_verify($password,$result['password'])){
+          $_SESSION["user_id"] = $result['id'];
+          $_SESSION["email"] = $result['user_name'];
           return true;
         }
       }
@@ -26,6 +29,12 @@ class User extends DB_connect{
     }catch(PDOException $e){
       echo "エラーが発生しました".$e->getMessage();
     } 
+  }
+
+  public function user_logout(){
+    session_start();
+    $_SESSION = array();
+    session_destroy();   
   }
 
   public function user_info($id){
