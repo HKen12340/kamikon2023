@@ -1,44 +1,58 @@
 @charset "UTF-8";
 
 .loginview_form {
-  text-align: center;
+  /* text-align: center; */
+}
+.loginview_card table{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.loginview_card table input{
+  margin-top: 10px;
 }
 
 .loginview_mlad {
-  font-size: 25px;
+  width: 98%;
+  height: 40px;
+  font-size: 95%;
+  /* font-size: 25px;
   position: relative;
-  right: 170px;
+  right: 170px; */
 }
 
 .loginview_pswd {
-  font-size: 25px;
+  width: 98%;
+  height: 40px;
+  font-size: 100%;
+  /* font-size: 25px;
   position: relative;
   top: 10px;
-  right: 195px;
+  right: 195px; */
 }
 
 .loginview_ip1 {
-  position: relative;
+  /* position: relative;
   width: 500px;
   height: 50px;
-  font-size: 100%;
+  font-size: 100%; */
 }
 
 .loginview_ip2 {
-  position: relative;
+  /* position: relative;
   width: 500px;
   height: 50px;
-  font-size: 100%;
+  font-size: 100%; */
 }
 
 .loginview_rgin {
-  position: relative;
+  /* position: relative;
   top: 35px;
   width: 150px;
   height: 50px;
   color: #fff;
   background-color: #00f;
-  border-radius: 5px;
+  border-radius: 5px; */
 }
 
 .loginview_rgin:hover {
@@ -46,10 +60,39 @@
 }
 
 .loginview_new {
-  font-size: 25px;
+  text-align:center;
+  margin-bottom:20px;
+  /* font-size: 25px;
   position: relative;
   top: 100px;
-  left: 33%;
+  left: 33%; */
+}
+
+.loginview_card{
+  margin: 10% auto;
+  color: black;
+  width: 30%;
+  height: auto;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(85, 70, 70, 0.2);  
+}
+
+
+
+.loginview_submit input{
+  background-color: #00f;
+  color: white;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.loginview_submit input:hover{
+  background-color: rgb(118, 118, 255);
 }
 
 .question_q1 {
@@ -139,37 +182,77 @@
 }
 
 .RegistAccount_content {
-  width: 500px;
+  /* width: 500px;
   margin: 3rem auto;
-  font-size: 15px;
+  font-size: 15px; */
+}
+
+.RegistAccount_Card{
+  margin: 10% auto;
+  color: black;
+  width: 30%;
+  
+  background-color: white;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(85, 70, 70, 0.2);  
+  text-align: center;
+}
+
+.RegistAccount_Card table{
+  width: 80%;
+  margin: 0 auto;
+}
+.RegistAccount_Card input{
+  margin-top: 10px;
 }
 
 .RegistAccount_ip {
-  width: 600px;
+  width: 98%;
+  height: 40px;
+  font-size: 100%;
+  /* width: 600px;
   height: 50px;
-  font-size: 100%; /*input入力文字サイズ*/
+  font-size: 100%; input入力文字サイズ */
 }
 
 .RegistAccount_td td {
-  padding-top: 15px;
+  /* padding-top: 15px; */
 }
 
 .RegistAccount_btn {
-  width: 40px;
-  text-align: right;
+  /* width: 40px;
+  text-align: right; */
 }
 
 .RegistAccount_submit {
-  color: white;
+  text-align: right;
+  /* color: white;
   font-size: 18px;
   background-color: blue;
   width: 120px;
   height: 50px;
   border: 0;
-  border-radius: 5px;
+  border-radius: 5px; */ 
 }
 
-.RegistAccount_submit:hover {
+.RegistAccount_submit input{
+  margin-top: 40px;
+  background-color: #00f;
+  color: white;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.RegistAccount_Cardtitle{
+  margin: 25px 0 0 0 ;
+  font-size: 25px;
+}
+
+.RegistAccount_submit input:hover {
   background-color: rgb(118, 118, 255);
 }
 
@@ -178,7 +261,6 @@
   margin-top: 30px;
 }
 .RegistRecipe_Picform{
-  /* padding: 10px 40px; */
   color: #ffffff;
   background-color: #384878;
   border: 10px dotted black;
@@ -188,6 +270,24 @@
 }
 
 .RegistRecipe_Picform input[type="file"] {
+  cursor: pointer;
+  width: 400px;
+  height: 280px;
+  opacity: 0;
+  /* display: none; */
+}
+
+.RegistRecipe_Iconform{
+  /* padding: 10px 40px; */
+  color: #0a0a0a;
+  background-color: #07fb71;
+  border: 10px dotted black;
+  border-radius: 10px;
+  width: 420px;
+  height: 300px;
+}
+
+.RegistRecipe_Iconform input[type="file"] {
   cursor: pointer;
   width: 400px;
   height: 280px;

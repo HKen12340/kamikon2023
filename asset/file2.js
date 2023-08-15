@@ -1,8 +1,24 @@
 $(function() {
-  $('input[type=file]').after('<span></span>');
+  $('.RegistRecipe_Iconform input[name="iconfile"]').change(function(e){
+    let fs = this.files;
+    $("#Iconpics").html("");
+    if(0 < fs.length){
+      let fR = new FileReader();
+      fR.onload = function(e){
+        let src = e.target.result;
+        $('<img>', { 'width':'100px','height':'100px','class':'picture', 'alt':fs[0].name, 'src': src }
+         ).appendTo('#Iconpics');
+      }
+      fR.readAsDataURL(fs[0]);
+    }
+  });
+ })
 
+
+$(function() {
+  $('.RegistRecipe_Picform input[type=file]').after('<span></span>');
   // アップロードするファイルを複数選択
-  $('input[type=file]').change(function() {
+  $('.RegistRecipe_Picform input[type=file]').change(function() {
     $('span').html('');
     var file = $(this).prop('files');
 

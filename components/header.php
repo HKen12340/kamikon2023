@@ -65,11 +65,18 @@
         <h1 class="title">COOKING CROSS</h1>
         <nav class="hnav">
           <ul>
-            <li><a href="#">Myレシピ</a></li>
+            <li><a href="/kamikon2023/content/my_recipe/myrecipe_list.php">Myレシピ</a></li>
             <li><a href="#">みんなのレシピ</a></li>
             <li><a href="#">レシピ検索</a></li>
             <li><a href="#">献立を決める</a></li>
-            <li><a href="/kamikon2023/login.view.php">ログイン</a></li>
+            <?php 
+              session_start();
+              if(empty($_SESSION['user_id'])){
+                print "<li><a href='/kamikon2023/login.view.php'>ログイン</a></li>";
+              }else{
+                print "<li><a href='/kamikon2023/account/logout.view.php'>ログアウト</a></li>";
+              }
+            ?>
           </ul>
         </nav>
       </div>

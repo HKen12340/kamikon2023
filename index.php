@@ -17,7 +17,7 @@
   foreach($result as $res){
     print '
     <div class="index_f-item">
-      <a href = "./content/release_recipe/release_view/release_view.php?id='.$res["id"].'">'.
+      <a href = "/kamikon2023/content/release_recipe/releace_view/releace_view.php?id='.$res["id"].'">'.
         '<img src='.$res["icon"].'>'.'</img>'.$res["recipe_name"].'
       </a>
       <p>by '.$res['user_name'].'</p>

@@ -3,11 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/uhu1wwl.css">
   <title>Cooking-Cross</title>
 </head>
+<style>
+.loginview_Cardtitle{
+  text-align:center;
+  font-family: lemongrass-script, sans-serif;
+  font-weight: 700;
+  font-style: normal; 
+  font-size:30px;
+  color:gray;
+}
+</style>
 <body>
 <?php 
-      require './components/simple_header.php';
+      
       require './database/user_model.php';
 
     if(!empty($_POST)){
@@ -29,18 +40,24 @@
       }
     }
 ?>
-
-<form name="login_form" method="post">
-  <div class="loginview_form">
-    <div>
-      <p class = "loginview_mlad">メールアドレス</p>
-      <input type="email" name="email" class="loginview_ip1" required><br>
-      <p class = "loginview_pswd">パスワード</p>
-      <input type="password" name="password" class="loginview_ip2" required>
+  <section class="loginview_card">
+    <h1 class="loginview_Cardtitle" >COOKING CROSS</h1>
+    <form name="login_form" method="post">
+      <table>
+        <tr>
+          <td class=""><input class="loginview_mlad" type="email" name="email" placeholder="メールアドレス" required></td>
+        </tr>
+        <tr>
+          <td><input class="loginview_pswd" type="password" name="password" placeholder="パスワード" required></td>
+        </tr>
+        <tr>
+          <td class="loginview_submit"><input type="submit" value="ログイン"></td>
+        </tr>
+      </table>
+    </form>
+    <div class="loginview_new">
+      <a href="./account/regist_account.php">アカウントをお持ちでない方はこちら</a>
     </div>
-    <button type="submit" class="loginview_rgin">ログイン</button>
-  </div>
-</form>
-<a href="./account/regist_account.php" class="loginview_new">アカウントをお持ちでない方はこちら</a>
+  </section>
 </body>
 </html>
