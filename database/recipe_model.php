@@ -92,7 +92,7 @@ class Recipe_model extends DB_connect{
       $procedures = implode(",",$post["procedures"]);
       $stmt->bindValue(":procedures",$procedures);
 
-      $stmt->bindValue(":Release_flag",0);
+      $stmt->bindValue(":Release_flag",1);
       
       $res = $stmt->execute();
 
