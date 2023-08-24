@@ -143,17 +143,14 @@
 }
 
 .index_f-container {
-  margin: 0 auto;
-
   width: 80%;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: calc(100% / 3 - 10px) calc(100% / 3 - 10px) calc(100% / 3 - 10px);
+  gap: 10px;
 }
 
 .index_f-item {
-  width: calc(100% / 3 - 10px);
   height: 300px;
   text-align: center;
   margin-left: 5px;
