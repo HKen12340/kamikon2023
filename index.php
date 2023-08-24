@@ -19,6 +19,7 @@
 }else{
   $now = $_GET['page_id'];
 }
+
 $result = $recipe->get_recipeList($now);
 foreach($result as $res){
   print '
@@ -56,14 +57,17 @@ if($now < $max_page){
       <svg xmlns="http://www.w3.org/2000/svg" class="index_Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
       </svg>
-  </a>
-</li>
-</ul>';} else{print '<li class="index_Pagination-Item"><div class="index_Pagination-Item-Link isActive"><svg xmlns="http://www.w3.org/2000/svg" class="index_Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    </a>
+  </li>
+  </ul>';
+} else{
+  print '<li class="index_Pagination-Item"><div class="index_Pagination-Item-Link isActive"><svg xmlns="http://www.w3.org/2000/svg" class="index_Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
   <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
 </svg>
 </div>
 </li>
-</ul>';}
+</ul>';
+}
 
 
   ?>

@@ -7,6 +7,7 @@
   <title>Document</title>
 </head>
 <body>
+<h2>Myレシピ一覧</h2>
   <?php 
     require('../../database/recipe_model.php');
     if (session_status() == PHP_SESSION_NONE) {
