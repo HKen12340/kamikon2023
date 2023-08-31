@@ -29,6 +29,7 @@ foreach($result as $res){
     <p>by '.$res['user_name'].'</p>
   </div>';
 }
+print '</div>'; //index_f-containerクラスここまで
 
  $max_page = $recipe->maxpage();
  $max_recipe = $recipe->maxrecipe();
@@ -47,6 +48,8 @@ if($now == 1 || $now == $max_page) {
 } else {
   $range = 2;
 }
+
+print '<section class="index_footer">';
 
 if ($now >= 2){
  print'<ul class="index_Pagination"><li class="index_Pagination-Item"><a class="index_Pagination-Item-Link" href="./index.php?page_id='.''.($now - 1).''.'"><svg xmlns="http://www.w3.org/2000/svg" class="index_Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -76,8 +79,8 @@ if($now < $max_page){
       </svg>
   </a>
 </li>
-</ul>';}
-else{
+</ul>';
+}else{
   print '<li class="index_Pagination-Item"><div class="index_Pagination-Item-Link isActive"><svg xmlns="http://www.w3.org/2000/svg" class="index_Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
   <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
 </svg>
@@ -88,8 +91,7 @@ else{
 
   ?>
 
-<p class="index_search"><?php print $max_recipe; ?>件中<?php print $from_record; ?> - <?php print $to_record;?> 件目を表示</p>
-
-</div>
+ <p class="index_search"><?php print $max_recipe; ?>件中<?php print $from_record; ?> - <?php print $to_record;?> 件目を表示</p> 
+ </section>
 </body>
 </html>
