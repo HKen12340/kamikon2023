@@ -13,7 +13,7 @@ if (session_status() == PHP_SESSION_NONE) {
  if(!empty($_POST)){
   $res = new Recipe_model();
   $res->create_recipe($_POST); 
-  //header();
+  header('location: myrecipe_list.php');
  }
  ?>
 <head>

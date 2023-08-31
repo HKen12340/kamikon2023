@@ -3,12 +3,12 @@
 .loginview_form {
   /* text-align: center; */
 }
-.loginview_card table{
+.loginview_card table {
   width: 80%;
   margin: 0 auto;
 }
 
-.loginview_card table input{
+.loginview_card table input {
   margin-top: 10px;
 }
 
@@ -60,15 +60,15 @@
 }
 
 .loginview_new {
-  text-align:center;
-  margin-bottom:20px;
+  text-align: center;
+  margin-bottom: 20px;
   /* font-size: 25px;
   position: relative;
   top: 100px;
   left: 33%; */
 }
 
-.loginview_card{
+.loginview_card {
   margin: 10% auto;
   color: black;
   width: 30%;
@@ -76,12 +76,10 @@
   background-color: white;
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(85, 70, 70, 0.2);  
+  box-shadow: 0 4px 15px rgba(85, 70, 70, 0.2);
 }
 
-
-
-.loginview_submit input{
+.loginview_submit input {
   background-color: #00f;
   color: white;
   width: 100%;
@@ -91,7 +89,7 @@
   margin: 10px 0;
 }
 
-.loginview_submit input:hover{
+.loginview_submit input:hover {
   background-color: rgb(118, 118, 255);
 }
 
@@ -143,17 +141,16 @@
 }
 
 .index_f-container {
-  margin: 0 auto;
-
   width: 80%;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: calc(100% / 3 - 10px) calc(100% / 3 - 10px) calc(
+      100% / 3 - 10px
+    );
+  gap: 10px;
 }
 
 .index_f-item {
-  width: calc(100% / 3 - 10px);
   height: 300px;
   text-align: center;
   margin-left: 5px;
@@ -181,13 +178,14 @@
   height: 170px;
 }
 
+.index_footer {
+  width: 650px;
+  margin: 0 auto;
+}
+
 .index_Pagination {
   display: flex;
-  align-items: center;
   list-style: none;
-  position: absolute;
-  top: 750px;
-  left: 520px;
 }
 
 .index_Pagination-Item-Link {
@@ -219,7 +217,12 @@
 }
 
 .index_Pagination > * + * {
-  margin-left: 30px;
+  margin: 0 15px;
+}
+
+.index_search {
+  font-size: 20px;
+  text-align: center;
 }
 
 .RegistAccount_content {
@@ -228,23 +231,23 @@
   font-size: 15px; */
 }
 
-.RegistAccount_Card{
+.RegistAccount_Card {
   margin: 10% auto;
   color: black;
   width: 30%;
-  
+
   background-color: white;
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(85, 70, 70, 0.2);  
+  box-shadow: 0 4px 15px rgba(85, 70, 70, 0.2);
   text-align: center;
 }
 
-.RegistAccount_Card table{
+.RegistAccount_Card table {
   width: 80%;
   margin: 0 auto;
 }
-.RegistAccount_Card input{
+.RegistAccount_Card input {
   margin-top: 10px;
 }
 
@@ -274,10 +277,10 @@
   width: 120px;
   height: 50px;
   border: 0;
-  border-radius: 5px; */ 
+  border-radius: 5px; */
 }
 
-.RegistAccount_submit input{
+.RegistAccount_submit input {
   margin-top: 40px;
   background-color: #00f;
   color: white;
@@ -288,8 +291,8 @@
   margin: 10px 0;
 }
 
-.RegistAccount_Cardtitle{
-  margin: 25px 0 0 0 ;
+.RegistAccount_Cardtitle {
+  margin: 25px 0 0 0;
   font-size: 25px;
 }
 
@@ -301,7 +304,7 @@
   margin-top: 30px;
 }
 
-.RegistRecipe_Picform{
+.RegistRecipe_Picform {
   color: #ffffff;
   background-color: #384878;
   border: 10px dotted black;
@@ -318,8 +321,7 @@
   /* display: none; */
 }
 
-
-.RegistRecipe_Iconform{
+.RegistRecipe_Iconform {
   /* padding: 10px 40px; */
   color: #0a0a0a;
   background-color: #07fb71;
@@ -337,7 +339,22 @@
   /* display: none; */
 }
 
-footer{
+.ReleaceView_Table{
+  width: 100%;
+}
+
+.ReleaceView_Table table tr{
+  border-collapse: collapse;
+  width: 100%;
+  border: solid 1px black;
+}
+
+.ReleaceView_Table td{
+  border: solid 1px black;
+  padding: 8px;
+}
+
+footer {
   margin-top: 50px;
   height: 50px;
   width: 100%;
