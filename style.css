@@ -339,6 +339,21 @@
   /* display: none; */
 }
 
+.ReleaceView_Table{
+  width: 100%;
+}
+
+.ReleaceView_Table table tr{
+  border-collapse: collapse;
+  width: 100%;
+  border: solid 1px black;
+}
+
+.ReleaceView_Table td{
+  border: solid 1px black;
+  padding: 8px;
+}
+
 footer {
   margin-top: 50px;
   height: 50px;
