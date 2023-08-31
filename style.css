@@ -184,7 +184,7 @@
   align-items: center;
   list-style: none;
   position: absolute;
-  top: 750px;
+  top: 825px;
   left: 475px;
 }
 
@@ -218,6 +218,13 @@
 
 .index_Pagination > * + * {
   margin-left: 30px;
+}
+
+.index_search {
+  font-size: 20px;
+  position: absolute;
+  left: 710px;
+  top: 750px;
 }
 
 .RegistAccount_content {

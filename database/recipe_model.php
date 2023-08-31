@@ -164,4 +164,13 @@ class Recipe_model extends DB_connect{
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result['maxpage'];
   }
+
+  //最大レシピ数
+  public function maxrecipe(){
+    $sql = "SELECT COUNT(id) AS maxrecire FROM recipe WHERE Release_flag = 1";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result['maxrecire'];
+ }
 }
