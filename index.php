@@ -85,7 +85,7 @@ else{
 </li>
 </ul>';
 }
-//test
+
   ?>
 
 <p class="index_search"><?php print $max_recipe; ?>件中<?php print $from_record; ?> - <?php print $to_record;?> 件目を表示</p>
