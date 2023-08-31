@@ -71,7 +71,7 @@ class Recipe_model extends DB_connect{
   public function create_recipe($post){
     if (session_status() == PHP_SESSION_NONE) {
       session_start();
-  }
+    }
 
       $CreateRecipeSql = "INSERT INTO recipe(user_id,recipe_name,introductions,material_names,
       amounts,procedures,Release_flag) VALUES(:user_id,:recipe_name,:introductions,:material_names
@@ -121,7 +121,6 @@ class Recipe_model extends DB_connect{
         $imgages = implode(',',$image_path);
         $stmt->bindValue(':img_name', $imgages , PDO::PARAM_STR);
         $stmt->execute();
-
 
         $Point_sql = "INSERT INTO recipe_point(recipe_id,time_point,money_point,volume_point,meat_point,fish_point,vegetable_point)
         VALUES((SELECT max(id) FROM recipe WHERE user_id = ".$_SESSION['user_id']."),
