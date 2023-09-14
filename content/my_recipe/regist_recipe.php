@@ -111,8 +111,8 @@ if (session_status() == PHP_SESSION_NONE) {
         count++;
     });
     $(".delete").on("click",function(){
-        $(`.ip_text${count}`).remove();
         count--;
+        $(`.ip_text${count}`).remove();
     });
 
     let prod_count = 1;
@@ -125,9 +125,13 @@ if (session_status() == PHP_SESSION_NONE) {
           </tr>
         `);
     });
+
     $(".prod_delete").on("click",function(){
         $(`.prod_textarea${prod_count}`).remove();
         prod_count--;
+        if(prod_count == 0){
+          prod_count = 1;
+        }
     });
   </script>
 </html>
