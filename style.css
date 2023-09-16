@@ -301,24 +301,27 @@
 }
 
 .RegistRecipe_Picform {
-  margin-top: 30px;
-}
-
-.RegistRecipe_Picform {
   color: #ffffff;
   background-color: #384878;
   border: 10px dotted black;
   border-radius: 10px;
-  width: 420px;
+  width: 710px;
   height: 300px;
+  position: relative;
+  top: 75px;
+  left: 500px;
+  text-align: center;
 }
 
 .RegistRecipe_Picform input[type="file"] {
   cursor: pointer;
-  width: 400px;
-  height: 280px;
+  width: 710px;
+  height: 300px;
   opacity: 0;
   /* display: none; */
+  position: relative;
+  bottom: 35px;
+  right: 10px;
 }
 
 .RegistRecipe_Iconform {
@@ -327,16 +330,204 @@
   background-color: #07fb71;
   border: 10px dotted black;
   border-radius: 10px;
-  width: 420px;
+  width: 710px;
   height: 300px;
+  position: relative;
+  top: 40px;
+  left: 500px;
+  text-align: center;
 }
 
 .RegistRecipe_Iconform input[type="file"] {
   cursor: pointer;
-  width: 400px;
-  height: 280px;
+  width: 710px;
+  height: 300px;
+  position: relative;
   opacity: 0;
   /* display: none; */
+  position: relative;
+  bottom: 35px;
+  right: 10px;
+}
+
+.registrecipe_page {
+  margin-bottom: 350px;
+  overflow-x: hidden;
+}
+
+.registrecipe_title {
+  position: relative;
+  top: 60px;
+  left: 320px;
+  font-size: 150%;
+}
+
+.registrecipe_input-recipe {
+  position: relative;
+  left: 450px;
+  width: 50%;
+  height: 40px;
+  font-size: 150%;
+}
+
+.registrecipe_intro {
+  position: relative;
+  top: 50px;
+  left: 320px;
+  font-size: 150%;
+}
+
+.registrecipe_intro-text {
+  position: relative;
+  width: 50%;
+  bottom: 10px;
+  left: 450px;
+  font-size: 150%;
+}
+
+.registrecipe_mate {
+  position: relative;
+  top: 25px;
+  left: 175px;
+  font-size: 150%;
+}
+
+.registrecipe_amou {
+  position: relative;
+  top: 25px;
+  left: 425px;
+  font-size: 150%;
+}
+
+.registrecipe_mate-text {
+  position: relative;
+  top: 25px;
+  left: 475px;
+  font-size: 150%;
+  margin-top: 20px;
+}
+
+.registrecipe_amou-text {
+  position: relative;
+  top: 25px;
+  left: 600px;
+  font-size: 150%;
+  margin-top: 20px;
+}
+
+.registrecipe_add1 {
+  position: relative;
+  top: 75px;
+  left: 550px;
+  width: 10%;
+  font-size: 150%;
+}
+
+.registrecipe_delete1 {
+  position: relative;
+  top: 75px;
+  left: 815px;
+  width: 10%;
+  font-size: 150%;
+}
+
+.registrecipe_method {
+  position: relative;
+  top: 100px;
+  left: 320px;
+  font-size: 150%;
+}
+
+.registrecipe_method-num {
+  position: relative;
+  top: 50px;
+  left: 460px;
+  font-size: 150%;
+}
+
+.registrecipe_method-text {
+  position: relative;
+  left: 500px;
+  width: 135%;
+  font-size: 150%;
+  margin-top: 20px;
+}
+
+.registrecipe_add2 {
+  position: relative;
+  top: 50px;
+  left: 555px;
+  width: 10%;
+  font-size: 150%;
+}
+
+.registrecipe_delete2 {
+  position: relative;
+  top: 50px;
+  left: 815px;
+  width: 10%;
+  font-size: 150%;
+}
+
+.registrecipe_icon1 {
+  position: relative;
+  top: 100px;
+  left: 320px;
+  font-size: 150%;
+}
+
+.registrecipe_icon2 {
+  position: relative;
+  top: 150px;
+  left: 320px;
+  font-size: 150%;
+}
+
+.registrecipe_point {
+  position: absolute;
+  left: 665px;
+  font-size: 150%;
+}
+
+.registrecipe_point-title {
+  position: relative;
+  top: 150px;
+  left: 500px;
+  font-size: 150%;
+}
+
+.registrecipe_pub {
+  position: relative;
+  top: 180px;
+  left: 500px;
+  font-size: 150%;
+}
+
+.registrecipe_pub-sel {
+  position: relative;
+  top: 25px;
+  left: 490px;
+  font-size: 125%;
+}
+
+.registrecipe_reg {
+  position: relative;
+  top: 250px;
+  left: 615px;
+  width: 30%;
+  font-size: 200%;
+}
+
+.registrecipe_Iconpics {
+  position: relative;
+  bottom: 175px;
+  left: 800px;
+}
+
+.registrecipe_Imgpics {
+  position: relative;
+  bottom: 375px;
+  left: 10px;
 }
 
 footer {

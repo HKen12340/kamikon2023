@@ -23,50 +23,49 @@ if (session_status() == PHP_SESSION_NONE) {
   <title>Document</title>
   <script src="/kamikon2023/asset/jquery-3.7.0.min.js"></script>
 </head>
-<body>
+<body class="registrecipe_page">
 <form enctype="multipart/form-data" method="post">
-  <p>レシピ名</p>
-  <input type="text" name="recipe_name">
-  <p>紹介文</p>
-<textarea cols="50" rows="10" name="introductions"></textarea>
+  <p class="registrecipe_title">レシピ名</p>
+  <input type="text" name="recipe_name" class="registrecipe_input-recipe">
+  <p class="registrecipe_intro">紹介文</p>
+<textarea cols="50" rows="10" name="introductions" class="registrecipe_intro-text"></textarea>
   <table class="textbox">
     <tr>
       <th></th>
-      <th>材料</th>
-      <th>量</th>
+      <th class="registrecipe_mate">材料</th>
+      <th class="registrecipe_amou">量</th>
       <th></th>
     </tr>
     <tr>
-      <td><button type="button" class="add">追加</button></td>
-      <td><input type="text" name="matelial[]"></td>
-      <td><input type="text" name="amount[]"></td>
-      <td><button type="button" class="delete">削除</button></td>
+      <td><input type="text" name="matelial[]" class="registrecipe_mate-text"></td>
+      <td><input type="text" name="amount[]" class="registrecipe_amou-text"></td>
     </tr>
   </table>
-  <p>調理手順</p>
+  <button type="button" class="add registrecipe_add1" >追加</button>
+  <button type="button" class="delete registrecipe_delete1">削除</button>
+  <p class="registrecipe_method">調理手順</p>
   <table class="textarea">
   <tr>
-    <td><p>1.</p><textarea name="procedures[]" class="prod_textarea" cols="50" rows="10"></textarea></td>
+    <td><p class="registrecipe_method-num">1.</p><textarea name="procedures[]" class="prod_textarea registrecipe_method-text" cols="50" rows="10"></textarea></td>
   </tr>
   </table>
 
-  <button type="button" class="prod_add">追加</button>
-  <button type="button" class="prod_delete">削除</button>
-  <p>レシピアイコン</p>
+  <button type="button" class="prod_add registrecipe_add2">追加</button>
+  <button type="button" class="prod_delete registrecipe_delete2">削除</button>
+  <p class="registrecipe_icon1">レシピアイコン</p>
     
   <div class="RegistRecipe_Iconform">
-      この領域にアイコンファイルをドロップしてください
+      この領域をクリックして画像ファイルを指定してください
       <input type="file" name="iconfile" accept="image/*" />
     </div>
-    <p id="Iconpics"></p>
+    <p id="Iconpics" class="registrecipe_Iconpics"></p>
 
-    <p>レシピ画像</p>
+    <p class="registrecipe_icon2">レシピ画像</p>
     <div class="RegistRecipe_Picform">
-      この領域にファイルをドロップしてください
+      この領域をクリックして画像ファイルを指定してください
       <input type="file" name="imagefile[]" accept="image/*" multiple />
     </div>
-
-  <p id="Imgpics"></p>
+    <p id="Imgpics" class="registrecipe_Imgpics"></p>
 
   <?php 
   $point_names = [
@@ -75,9 +74,9 @@ if (session_status() == PHP_SESSION_NONE) {
   ];
   for($i = 0;$i < count($point_names["label_name"]);$i++){
     print"
-    <p>
+    <p class='registrecipe_point-title'>
     <label for=''>".$point_names["label_name"][$i]."・・・
-      <select name=".$point_names["select_name"][$i]." id=''>
+      <select name=".$point_names["select_name"][$i]." id='' class='registrecipe_point'>
         <option value='1'>1</option>
         <option value='2'>2</option>
         <option value='3'>3</option>
@@ -86,14 +85,15 @@ if (session_status() == PHP_SESSION_NONE) {
     </p>";
   }
 ?>
-<p>レシピを
-  <select name="" id="">
+
+<p class='registrecipe_pub'>レシピを
+  <select name="" id="" class="registrecipe_pub-sel">
     <option value="">公開</option>
     <option value="">非公開</option>
   </select>
 </p>
 
-    <input type="submit" value="送信">
+    <input type="submit" value="レシピ登録" class="registrecipe_reg">
   </form>
     
   <script src="/kamikon2023/asset/file2.js"></script>
@@ -102,10 +102,8 @@ if (session_status() == PHP_SESSION_NONE) {
     $(".add").on("click",function(){
         $(".textbox").append(`
           <tr class="ip_text${count}">
-            <td></td>
-            <td><input type="text" name="matelial[]"></td>
-            <td><input type="text" name="amount[]""</td>
-            <td></td>
+            <td><input type="text" name="matelial[]" class="registrecipe_mate-text"></td>
+            <td><input type="text" name="amount[]" class="registrecipe_amou-text"></td>
           </tr>
         `);
         count++;
@@ -120,8 +118,8 @@ if (session_status() == PHP_SESSION_NONE) {
       prod_count++;
         $(".textarea").append(`
           <tr class="prod_textarea${prod_count}">
-            <td><p>${prod_count}.</p>
-            <textarea name="prod[]" cols="50" rows="10"></textarea></td>
+            <td><p class="registrecipe_method-num">${prod_count}.</p>
+            <textarea name="prod[]" cols="50" rows="10" class="registrecipe_method-text"></textarea></td>
           </tr>
         `);
     });
