@@ -352,11 +352,12 @@
 
 .registrecipe_page {
   position: relative;
+  height: 150%;
 }
 
 .registrecipe_form {
   position: absolute;
-  right: 50%;
+  right: 52.5%;
 }
 
 .registrecipe_title {
@@ -517,10 +518,9 @@
 .registrecipe_reg {
   position: relative;
   top: 250px;
-  left: 635px;
+  left: 610px;
   width: 50%;
   font-size: 200%;
-  margin-bottom: 100px;
 }
 
 .registrecipe_Iconpics {
@@ -535,6 +535,9 @@
   left: 10px;
 }
 
+.registrecipe_SubmitArea {
+  padding-bottom: 300px;
+=======
 .ReleaceView_Table{
   width: 100%;
 }
@@ -548,6 +551,7 @@
 .ReleaceView_Table td{
   border: solid 1px black;
   padding: 8px;
+
 }
 
 footer {
