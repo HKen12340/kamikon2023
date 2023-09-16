@@ -309,7 +309,7 @@
   height: 300px;
   position: relative;
   top: 75px;
-  left: 500px;
+  left: 450px;
   text-align: center;
 }
 
@@ -334,7 +334,7 @@
   height: 300px;
   position: relative;
   top: 40px;
-  left: 500px;
+  left: 450px;
   text-align: center;
 }
 
@@ -351,58 +351,62 @@
 }
 
 .registrecipe_page {
-  margin-bottom: 350px;
-  overflow-x: hidden;
+  position: relative;
+}
+
+.registrecipe_form {
+  position: absolute;
+  right: 50%;
 }
 
 .registrecipe_title {
   position: relative;
   top: 60px;
-  left: 320px;
+  left: 250px;
   font-size: 150%;
 }
 
 .registrecipe_input-recipe {
   position: relative;
   left: 450px;
-  width: 50%;
-  height: 40px;
+  width: 100%;
+  height: 50px;
   font-size: 150%;
 }
 
 .registrecipe_intro {
   position: relative;
   top: 50px;
-  left: 320px;
+  left: 250px;
   font-size: 150%;
 }
 
 .registrecipe_intro-text {
   position: relative;
-  width: 50%;
+  width: 100%;
   bottom: 10px;
   left: 450px;
-  font-size: 150%;
+  font-size: 200%;
 }
 
 .registrecipe_mate {
   position: relative;
   top: 25px;
-  left: 175px;
+  left: 140px;
   font-size: 150%;
 }
 
 .registrecipe_amou {
   position: relative;
   top: 25px;
-  left: 425px;
+  left: 390px;
   font-size: 150%;
 }
 
 .registrecipe_mate-text {
   position: relative;
   top: 25px;
-  left: 475px;
+  left: 450px;
   font-size: 150%;
   margin-top: 20px;
 }
@@ -410,7 +414,7 @@
 .registrecipe_amou-text {
   position: relative;
   top: 25px;
-  left: 600px;
+  left: 550px;
   font-size: 150%;
   margin-top: 20px;
 }
@@ -418,37 +422,37 @@
 .registrecipe_add1 {
   position: relative;
   top: 75px;
-  left: 550px;
-  width: 10%;
+  left: 510px;
+  width: 25%;
   font-size: 150%;
 }
 
 .registrecipe_delete1 {
   position: relative;
   top: 75px;
-  left: 815px;
-  width: 10%;
+  left: 745px;
+  width: 25%;
   font-size: 150%;
 }
 
 .registrecipe_method {
   position: relative;
   top: 100px;
-  left: 320px;
+  left: 250px;
   font-size: 150%;
 }
 
 .registrecipe_method-num {
   position: relative;
   top: 50px;
-  left: 460px;
+  left: 415px;
   font-size: 150%;
 }
 
 .registrecipe_method-text {
   position: relative;
-  left: 500px;
-  width: 135%;
+  left: 450px;
+  width: 136%;
   font-size: 150%;
   margin-top: 20px;
 }
@@ -456,30 +460,30 @@
 .registrecipe_add2 {
   position: relative;
   top: 50px;
-  left: 555px;
-  width: 10%;
+  left: 510px;
+  width: 25%;
   font-size: 150%;
 }
 
 .registrecipe_delete2 {
   position: relative;
   top: 50px;
-  left: 815px;
-  width: 10%;
+  left: 745px;
+  width: 25%;
   font-size: 150%;
 }
 
 .registrecipe_icon1 {
   position: relative;
   top: 100px;
-  left: 320px;
+  left: 250px;
   font-size: 150%;
 }
 
 .registrecipe_icon2 {
   position: relative;
   top: 150px;
-  left: 320px;
+  left: 250px;
   font-size: 150%;
 }
 
@@ -492,20 +496,20 @@
 .registrecipe_point-title {
   position: relative;
   top: 150px;
-  left: 500px;
+  left: 450px;
   font-size: 150%;
 }
 
 .registrecipe_pub {
   position: relative;
   top: 180px;
-  left: 500px;
+  left: 450px;
   font-size: 150%;
 }
 
 .registrecipe_pub-sel {
   position: relative;
-  top: 25px;
+  top: 15px;
   left: 490px;
   font-size: 125%;
 }
@@ -513,9 +517,10 @@
 .registrecipe_reg {
   position: relative;
   top: 250px;
-  left: 615px;
-  width: 30%;
+  left: 635px;
+  width: 50%;
   font-size: 200%;
+  margin-bottom: 100px;
 }
 
 .registrecipe_Iconpics {
