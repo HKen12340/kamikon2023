@@ -24,7 +24,7 @@ if (session_status() == PHP_SESSION_NONE) {
   <script src="/kamikon2023/asset/jquery-3.7.0.min.js"></script>
 </head>
 <body class="registrecipe_page">
-<form enctype="multipart/form-data" method="post">
+<form enctype="multipart/form-data" method="post" class="registrecipe_form">
   <p class="registrecipe_title">レシピ名</p>
   <input type="text" name="recipe_name" class="registrecipe_input-recipe">
   <p class="registrecipe_intro">紹介文</p>
@@ -128,5 +128,5 @@ if (session_status() == PHP_SESSION_NONE) {
         prod_count--;
     });
   </script>
-</html>
 </body>
+</html>
