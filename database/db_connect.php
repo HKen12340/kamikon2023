@@ -1,9 +1,9 @@
 <?php
 if(!class_exists('DB_connect')){
   abstract class DB_connect{
-    const DNS = 'mysql:host=localhost;dbname=ccr_db'; 
-    const DB_USER = 'root';
-    const PASS = '';
+    const DNS = 'mysql:host=mysql;dbname=ccr_db'; 
+    const DB_USER = 'test';
+    const PASS = 'test';
     protected $pdo;
     
     public function __construct()

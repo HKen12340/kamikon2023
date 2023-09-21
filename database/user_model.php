@@ -10,7 +10,7 @@ class User extends DB_connect{
 
   public function user_login($mail,$password){
     try{
-      session_start();
+      // session_start();
       $sql = 'SELECT * FROM user WHERE mail_address = :mail';
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(':mail',$mail);
@@ -32,7 +32,7 @@ class User extends DB_connect{
   }
 
   public function user_logout(){
-    session_start();
+    // session_start();
     $_SESSION = array();
     session_destroy();   
   }
