@@ -1,3 +1,4 @@
+<?php error_reporting(0); ?>
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -70,7 +71,9 @@
             <li><a href="#">レシピ検索</a></li>
             <li><a href="#">献立を決める</a></li>
             <?php 
-              session_start();
+              if (session_status() == PHP_SESSION_NONE){
+                session_start();
+              }
               if(empty($_SESSION['user_id'])){
                 print "<li><a href='/kamikon2023/login.view.php'>ログイン</a></li>";
               }else{

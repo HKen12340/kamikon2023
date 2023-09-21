@@ -1,3 +1,24 @@
+<?php
+  require './database/user_model.php';
+  if(!empty($_POST)){
+    $user = new User();
+    if(strlen($_POST['email']) > 0 && strlen($_POST['password']) > 0){
+      if($user->user_login($_POST['email'],$_POST['password'])){
+        header('Location: index.php');
+      }else{
+        print '<p>メールアドレスかパスワードが間違っています</p>';
+      }
+    }
+
+    if(empty($_POST['email'])){
+      print '<p>メールアドレスの入力は必須です。</p>';
+    }
+  
+    if(empty($_POST['password'])){
+      print '<p>パスワードの入力は必須です。</p>';
+    }
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,26 +40,26 @@
 <body>
 <?php 
       
-      require './database/user_model.php';
+      // require './database/user_model.php';
 
-    if(!empty($_POST)){
-      $user = new User();      
-      if(strlen($_POST['email']) > 0 && strlen($_POST['password']) > 0){
-        if($user->user_login($_POST['email'],$_POST['password'])){
-          header('Location: index.php');
-        }else{
-          print '<p>メールアドレスかパスワードが間違っています</p>';
-        }
-      }
+    // if(!empty($_POST)){
+    //   // $user = new User();
+    //   if(strlen($_POST['email']) > 0 && strlen($_POST['password']) > 0){
+    //     if($user->user_login($_POST['email'],$_POST['password'])){
+    //       header('Location: index.php');
+    //     }else{
+    //       print '<p>メールアドレスかパスワードが間違っています</p>';
+    //     }
+    //   }
 
-      if(empty($_POST['email'])){
-        print '<p>メールアドレスの入力は必須です。</p>';
-      }
+    //   if(empty($_POST['email'])){
+    //     print '<p>メールアドレスの入力は必須です。</p>';
+    //   }
     
-      if(empty($_POST['password'])){
-        print '<p>パスワードの入力は必須です。</p>';
-      }
-    }
+    //   if(empty($_POST['password'])){
+    //     print '<p>パスワードの入力は必須です。</p>';
+    //   }
+    // }
 ?>
   <section class="loginview_card">
     <h1 class="loginview_Cardtitle" >COOKING CROSS</h1>
