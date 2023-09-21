@@ -339,19 +339,63 @@
   /* display: none; */
 }
 
-.ReleaceView_Table{
-  width: 100%;
+/* releace_view.php */
+.ReleaceView_User {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 160px;
 }
 
-.ReleaceView_Table table tr{
+.ReleaceView_Recipe {
+  display: flex;
+  width: 1400px;
+  height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
+
+.ReleaceView_Table {
+  width: 30%;
+  height: 40px;
+  display: flex;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: 250px;
+  table-layout: fixed;
+  justify-content: right;
+}
+
+.ReleaceView_Table table tr {
   border-collapse: collapse;
-  width: 100%;
   border: solid 1px black;
 }
 
-.ReleaceView_Table td{
+.ReleaceView_Table td {
+  word-wrap: break-word;
   border: solid 1px black;
-  padding: 8px;
+}
+
+.ReleaceView_Set {
+  display: flex;
+}
+
+/* .ReleaceView_Image {} */
+
+.ReleaceView_Intro {
+  /* width: 40%; */
+  height: 100px;
+  margin: 10px 0 0 160px;
+  display: grid;
+}
+
+.ReleaceView_proc {
+  /* width: 40%; */
+  height: 100px;
+  margin: 20px 0 0 160px;
+  line-height: 50px;
+  display: grid;
 }
 
 footer {
