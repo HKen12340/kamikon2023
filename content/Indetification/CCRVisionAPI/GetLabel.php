@@ -38,6 +38,9 @@
   $Ide = new identification_model();
   $result = $Ide->RecipeSreach($name);
   
+  //ヘッダー呼び出し
+  require('../../../components/header.php');
+
   //材料リストにしているかつRecipiテーブルに対象の材料を使ったレシピが存在する
   if($name != "" && count($result) >= 1){
     print "<div class='index_f-container'>";
@@ -53,8 +56,10 @@
     print '</div>'; //index_f-containerクラスここまで
   }else{
     print '
-    <div style="text-align:center">
-      <h1>対象の材料を使ったレシピが見つかりませんでした</h1>
+    <div">
+      <h1 style="  display: flex;
+      justify-content: center;
+      align-items: center;">対象の材料を使ったレシピが見つかりませんでした</h1>
     </div>
     ';
   }
