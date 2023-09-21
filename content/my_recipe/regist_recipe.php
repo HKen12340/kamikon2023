@@ -86,12 +86,6 @@ if (session_status() == PHP_SESSION_NONE) {
   }
 ?>
 
-<p class='registrecipe_pub'>レシピを
-  <select name="" id="" class="registrecipe_pub-sel">
-    <option value="">公開</option>
-    <option value="">非公開</option>
-  </select>
-</p>
 <div class="registrecipe_SubmitArea">
     <input type="submit" value="レシピ登録" class="registrecipe_reg">
 </div>

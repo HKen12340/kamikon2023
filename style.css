@@ -1,4 +1,4 @@
-@charset "UTF-8";
+v@charset "UTF-8";
 
 .loginview_form {
   /* text-align: center; */
@@ -151,10 +151,8 @@
 }
 
 .index_f-item {
-  height: 300px;
+  height: 275px;
   text-align: center;
-  margin-left: 5px;
-  margin-top: 25px;
   background-color: white;
   overflow: hidden;
   border-radius: 8px;
@@ -501,20 +499,6 @@
   font-size: 150%;
 }
 
-.registrecipe_pub {
-  position: relative;
-  top: 180px;
-  left: 450px;
-  font-size: 150%;
-}
-
-.registrecipe_pub-sel {
-  position: relative;
-  top: 15px;
-  left: 490px;
-  font-size: 125%;
-}
-
 .registrecipe_reg {
   position: relative;
   top: 250px;
@@ -537,21 +521,32 @@
 
 .registrecipe_SubmitArea {
   padding-bottom: 300px;
-=======
-.ReleaceView_Table{
+}
+.ReleaceView_Table {
   width: 100%;
 }
 
-.ReleaceView_Table table tr{
+.ReleaceView_Table table tr {
   border-collapse: collapse;
   width: 100%;
   border: solid 1px black;
 }
 
-.ReleaceView_Table td{
+.ReleaceView_Table td {
   border: solid 1px black;
   padding: 8px;
+}
 
+.myrecipelist_title {
+  text-align: center;
+  font-size: 35px;
+}
+
+.myrecipelist_user {
+  position: absolute;
+  top: 90px;
+  left: 10px;
+  font-size: 30px;
 }
 
 footer {

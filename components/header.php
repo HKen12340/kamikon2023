@@ -61,8 +61,8 @@
   <body>
     <header class="header">
       <div class="container">
-      <img class="logo" src="/kamikon2023/components/image/sample_logo.png" alt="ロゴ">
-        <h1 class="title">COOKING CROSS</h1>
+      <a href="/kamikon2023/index.php"><img class="logo" src="/kamikon2023/components/image/sample_logo.png" alt="ロゴ"></a>
+      <h1 class="title">COOKING CROSS</h1>
         <nav class="hnav">
           <ul>
             <li><a href="/kamikon2023/content/my_recipe/myrecipe_list.php">Myレシピ</a></li>

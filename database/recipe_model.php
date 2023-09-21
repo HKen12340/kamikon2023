@@ -14,7 +14,7 @@ class Recipe_model extends DB_connect{
       $num = 6 * ($page_num - 1);
       $sql = "SELECT a.id, recipe_name, icon,user_name FROM recipe a 
       LEFT JOIN recipe_picture b ON a.id = b.recipe_id 
-      LEFT JOIN user c ON c.id = a.user_id WHERE Release_flag = 1 ORDER BY 
+      LEFT JOIN user c ON c.id = a.user_id  ORDER BY 
       a.create_at DESC limit 6 offset :num";
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(":num",(int)$num, PDO::PARAM_INT);//$numをint型に変換
@@ -35,7 +35,7 @@ class Recipe_model extends DB_connect{
     try{
       $sql = 'SELECT id, user_id, recipe_name, introductions, material_names, amounts, 
       procedures, Release_flag, create_at FROM recipe a INNER JOIN recipe_picture b ON
-      a.id = b.recipe_id  WHERE id = :id AND Release_flag = 1';
+      a.id = b.recipe_id  WHERE id = :id';
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(":id",$num);
       $stmt->execute();
@@ -157,19 +157,38 @@ class Recipe_model extends DB_connect{
 
   //最大ページ数
   public function maxpage(){
-    $sql = "SELECT CEILING(COUNT(id) / 6) AS maxpage FROM recipe WHERE Release_flag = 1";
+    $sql = "SELECT CEILING(COUNT(id) / 6) AS maxpage FROM recipe";
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result['maxpage'];
   }
 
+  public function maxMypage($userid){
+    $sql = "SELECT CEILING(COUNT(id) / 6) AS maxpage FROM recipe WHERE user_id = :userid";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(":userid",(int)$userid, PDO::PARAM_INT);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result['maxpage'];
+  }
+
+
   //最大レシピ数
   public function maxrecipe(){
-    $sql = "SELECT COUNT(id) AS maxrecire FROM recipe WHERE Release_flag = 1";
+    $sql = "SELECT COUNT(id) AS maxrecipe FROM recipe";
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result['maxrecire'];
+    return $result['maxrecipe'];
  }
+
+ public function maxMyrecipe($userid){
+  $sql = "SELECT COUNT(id) AS maxrecipe FROM recipe WHERE  user_id = :userid";
+  $stmt = $this->pdo->prepare($sql);
+  $stmt->bindValue(":userid",(int)$userid, PDO::PARAM_INT);
+  $stmt->execute();
+  $result = $stmt->fetch(PDO::FETCH_ASSOC);
+  return $result['maxrecipe'];
+}
 }
