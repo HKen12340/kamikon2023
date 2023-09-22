@@ -3,7 +3,7 @@ if(!class_exists('DB_connect')){
   abstract class DB_connect{
     const DNS = 'mysql:host=localhost;dbname=ccr_db'; 
     const DB_USER = 'root';
-    const PASS = 'iwasaki_';
+    const PASS = '';
     protected $pdo;
     
     public function __construct()
