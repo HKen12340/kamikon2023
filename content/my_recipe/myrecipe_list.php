@@ -9,8 +9,9 @@
   <title>Document</title>
 </head>
 
-<body>
+<body class="myrecipelist_page">
 <h2 class="myrecipelist_title">Myレシピ一覧</h2>
+<a href="regist_recipe.php" class="myrecipelist_make">レシピ作成</a>
 <div class="index_f-container">
   <?php 
     require('../../database/recipe_model.php');
@@ -62,6 +63,8 @@ if($now == 1 || $now == $max_page) {
 
 print '<section class="index_footer">';
 
+print  '<p class="index_search">'. $max_recipe . '件中 '. $from_record . ' - ' . $to_record . '件目を表示</p>'; 
+
 if ($now >= 2){
  print'<ul class="index_Pagination"><li class="index_Pagination-Item"><a class="index_Pagination-Item-Link" href="./myrecipe_list.php?page_id='.''.($now - 1).''.'"><svg xmlns="http://www.w3.org/2000/svg" class="index_Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
     <path stroke-linecap="round" stroke-linejoin="round" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
@@ -101,10 +104,8 @@ if($now < $max_page){
 }
 
   ?>
-
- <p class="index_search"><?php print $max_recipe; ?>件中<?php print $from_record; ?> - <?php print $to_record;?> 件目を表示</p> 
+  
  </section>
 
- <a href="regist_recipe.php">レシピを作る</a>
 </body>
 </html>
