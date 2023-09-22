@@ -3,9 +3,7 @@
 body{
   background-image: url("components/back.png");
 }
-.loginview_form {
-  /* text-align: center; */
-}
+
 .loginview_card table {
   width: 80%;
   margin: 0 auto;
@@ -19,45 +17,13 @@ body{
   width: 98%;
   height: 40px;
   font-size: 95%;
-  /* font-size: 25px;
-  position: relative;
-  right: 170px; */
 }
 
 .loginview_pswd {
   width: 98%;
   height: 40px;
-  font-size: 100%;
-  /* font-size: 25px;
-  position: relative;
-  top: 10px;
-  right: 195px; */
+  font-size: 100%; 
 }
-
-.loginview_ip1 {
-  /* position: relative;
-  width: 500px;
-  height: 50px;
-  font-size: 100%; */
-}
-
-.loginview_ip2 {
-  /* position: relative;
-  width: 500px;
-  height: 50px;
-  font-size: 100%; */
-}
-
-.loginview_rgin {
-  /* position: relative;
-  top: 35px;
-  width: 150px;
-  height: 50px;
-  color: #fff;
-  background-color: #00f;
-  border-radius: 5px; */
-}
-
 .loginview_rgin:hover {
   background-color: rgb(118, 118, 255);
 }
@@ -65,10 +31,6 @@ body{
 .loginview_new {
   text-align: center;
   margin-bottom: 20px;
-  /* font-size: 25px;
-  position: relative;
-  top: 100px;
-  left: 33%; */
 }
 
 .loginview_card {
@@ -225,12 +187,6 @@ body{
   text-align: center;
 }
 
-.RegistAccount_content {
-  /* width: 500px;
-  margin: 3rem auto;
-  font-size: 15px; */
-}
-
 .RegistAccount_Card {
   margin: 10% auto;
   color: black;
@@ -255,29 +211,10 @@ body{
   width: 98%;
   height: 40px;
   font-size: 100%;
-  /* width: 600px;
-  height: 50px;
-  font-size: 100%; input入力文字サイズ */
-}
-
-.RegistAccount_td td {
-  /* padding-top: 15px; */
-}
-
-.RegistAccount_btn {
-  /* width: 40px;
-  text-align: right; */
 }
 
 .RegistAccount_submit {
   text-align: right;
-  /* color: white;
-  font-size: 18px;
-  background-color: blue;
-  width: 120px;
-  height: 50px;
-  border: 0;
-  border-radius: 5px; */
 }
 
 .RegistAccount_submit input {
@@ -318,14 +255,12 @@ body{
   width: 710px;
   height: 300px;
   opacity: 0;
-  /* display: none; */
   position: relative;
   bottom: 35px;
   right: 10px;
 }
 
 .RegistRecipe_Iconform {
-  /* padding: 10px 40px; */
   color: #0a0a0a;
   background-color: #07fb71;
   border: 10px dotted black;
@@ -585,10 +520,7 @@ body{
   display: flex;
 }
 
-/* .ReleaceView_Image {} */
-
 .ReleaceView_Intro {
-  /* width: 40%; */
   height: 100px;
   margin: 0 0 0 160px;
   /* display: grid; */
@@ -596,7 +528,6 @@ body{
 }
 
 .ReleaceView_proc {
-  /* width: 40%; */
   height: 100px;
   margin: 100px 0 0 160px;
   line-height: 50px;

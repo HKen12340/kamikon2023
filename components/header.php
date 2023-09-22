@@ -1,4 +1,5 @@
 <header>
+  <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="https://use.typekit.net/uhu1wwl.css">
     <style>
@@ -7,6 +8,10 @@
 
         body {
         margin:0;
+        }
+
+        header {
+        margin-bottom: 30px;
         }
 
         .header{
