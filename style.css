@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+body{
+  background-image: url("components/back.png");
+}
 .loginview_form {
   /* text-align: center; */
 }
@@ -93,7 +96,7 @@
   background-color: rgb(118, 118, 255);
 }
 
-.question_q1 {
+#question_q1 {
   font-size: 25px;
   text-align: center;
   padding: 10px;
@@ -104,7 +107,7 @@
   width: 850px;
 }
 
-.question_yes {
+#question_yes {
   font-size: 25px;
   text-align: center;
   color: #fff;
@@ -118,11 +121,11 @@
   width: 250px;
 }
 
-.question_yes:hover {
+#question_yes:hover {
   background-color: rgb(118, 118, 255);
 }
 
-.question_no {
+#question_no {
   font-size: 25px;
   text-align: center;
   color: #fff;
@@ -354,9 +357,69 @@
   padding: 8px;
 }
 
+/* releace_view.php */
+.ReleaceView_User {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 160px;
+}
+
+.ReleaceView_Recipe {
+  display: flex;
+  width: 1400px;
+  height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
+
+.ReleaceView_Table {
+  width: 30%;
+  height: 40px;
+  display: flex;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: 250px;
+  table-layout: fixed;
+  justify-content: right;
+}
+
+.ReleaceView_Table table tr {
+  border-collapse: collapse;
+  border: solid 1px black;
+}
+
+.ReleaceView_Table td {
+  word-wrap: break-word;
+  border: solid 1px black;
+}
+
+.ReleaceView_Set {
+  display: flex;
+}
+
+/* .ReleaceView_Image {} */
+
+.ReleaceView_Intro {
+  /* width: 40%; */
+  height: 100px;
+  margin: 10px 0 0 160px;
+  display: grid;
+}
+
+.ReleaceView_proc {
+  /* width: 40%; */
+  height: 100px;
+  margin: 20px 0 0 160px;
+  line-height: 50px;
+  display: grid;
+}
+
 footer {
   margin-top: 50px;
   height: 50px;
   width: 100%;
   background-color: rgb(221, 217, 217);
 }
+
