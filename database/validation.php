@@ -33,4 +33,9 @@ class Validation extends DB_connect{
     }
     return false;
   }
+
+  public function __destruct(){
+    //DB切断処理を記述
+    //prarent::__destruct();
+  }
 }
