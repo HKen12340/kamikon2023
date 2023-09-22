@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
+<header>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="https://use.typekit.net/uhu1wwl.css">
-    <title>Cooking Cross</title>
     <style>
       @charset "UTF-8";
         * {	box-sizing:border-box;}
@@ -48,7 +45,7 @@
           display:block;
           padding:2em;
           color:#fff;
-          font-size:30;
+          font-size:16px;
           font-weight:bold;
           text-decoration:none;
         }
@@ -66,9 +63,8 @@
         <nav class="hnav">
           <ul>
             <li><a href="/kamikon2023/content/my_recipe/myrecipe_list.php">Myレシピ</a></li>
-            <li><a href="#">みんなのレシピ</a></li>
-            <li><a href="#">レシピ検索</a></li>
-            <li><a href="#">献立を決める</a></li>
+            <li><a href="/kamikon2023/content/question/question.php">質問</a></li>
+            <li><a href="/kamikon2023/content/Indetification/ImageSet.php">画像識別</a></li>
             <?php 
               session_start();
               if(empty($_SESSION['user_id'])){
@@ -81,5 +77,4 @@
         </nav>
       </div>
     </header>
-  </body>
-</html>
+  
