@@ -1,4 +1,4 @@
-v@charset "UTF-8";
+@charset "UTF-8";
 
 body{
   background-image: url("components/back.png");
@@ -587,16 +587,17 @@ body{
 .ReleaceView_Intro {
   /* width: 40%; */
   height: 100px;
-  margin: 10px 0 0 160px;
-  display: grid;
+  margin: 0 0 0 160px;
+  /* display: grid; */
+  position: relative;
 }
 
 .ReleaceView_proc {
   /* width: 40%; */
   height: 100px;
-  margin: 20px 0 0 160px;
+  margin: 100px 0 0 160px;
   line-height: 50px;
-  display: grid;
+  display: inline-block;
 }
 
 .myrecipelist_title {
