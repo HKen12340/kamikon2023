@@ -522,16 +522,22 @@ body{
 
 .ReleaceView_Intro {
   height: 100px;
-  margin: 0 0 0 160px;
-  /* display: grid; */
+  margin: 0 0 0 200px;
   position: relative;
 }
 
-.ReleaceView_proc {
+.ReleaceView_Proc {
   height: 100px;
-  margin: 100px 0 0 160px;
-  line-height: 50px;
-  display: inline-block;
+  width: 50%;
+  margin: 0 0 40px 25%;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.ReleaceView_Method {
+  margin: 120px 0 0 25%;
 }
 
 .myrecipelist_title {
