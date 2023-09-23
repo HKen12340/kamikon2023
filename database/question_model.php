@@ -122,5 +122,9 @@ class Question_model extends DB_connect{
   }catch(PDOException $e){
     return "エラーが発生しました".$e->getMessage();
   }
-  }
+ }
+
+ public function __destruct(){
+  $this->pdo = null;   
+}
 }

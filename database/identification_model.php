@@ -23,4 +23,8 @@ class identification_model extends DB_connect{
       return "エラーが発生しました".$e->getMessage();
     } 
   }
+
+  public function __destruct(){
+    $this->pdo = null;   
+  }
 }

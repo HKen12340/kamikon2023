@@ -35,7 +35,6 @@ class Validation extends DB_connect{
   }
 
   public function __destruct(){
-    //DB切断処理を記述
-    //prarent::__destruct();
+    $this->pdo = null;   
   }
 }
