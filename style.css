@@ -248,6 +248,8 @@ body {
   background-color: rgb(118, 118, 255);
 }
 
+/* regist_recipe.php */
+
 .registrecipe_content {
   width: 60%;
   margin: 0 auto;
@@ -361,6 +363,8 @@ body {
   font-size: 225%;
 }
 
+/* releace_view.php */
+
 .ReleaceView_Table {
    width: 300px;
 }
@@ -388,7 +392,9 @@ table td{
 .myrecipelist_page {
   text-align: center;
 }
+
 /* releace_view.php */
+
 .ReleaceView_User {
   display: flex;
   margin-top: 30px;
@@ -457,6 +463,8 @@ table td{
   justify-content: space-around;
   align-items:center;
 }
+
+/* myrecipe_list.php */
 
 .myrecipelist_title {
   text-align: center;
