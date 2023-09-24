@@ -33,7 +33,7 @@ class Recipe_model extends DB_connect{
   //指定したレシピを取得 
   public function get_recipe($num){
     try{
-      $sql = 'SELECT id, user_id, recipe_name, introductions, material_names, amounts, 
+      $sql = 'SELECT id, user_id, recipe_name,icon,introductions, material_names, amounts, 
       procedures, Release_flag, create_at FROM recipe a INNER JOIN recipe_picture b ON
       a.id = b.recipe_id  WHERE id = :id';
       $stmt = $this->pdo->prepare($sql);
