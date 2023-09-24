@@ -62,11 +62,21 @@ body {
   font-size: 25px;
   text-align: center;
   padding: 10px;
-  position: relative;
+  margin: 0 auto;
+  margin-top: 100px;
+
+  /* position: relative;
   top: 200px;
-  left: 325px;
+  left: 325px; */
   border: 2px solid rgb(100, 100, 255);
-  width: 850px;
+  /* width: 850px; */
+}
+
+.question_YesNoButtonArea{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+  align-items: center;
 }
 
 #question_yes {
@@ -75,9 +85,9 @@ body {
   color: #fff;
   background-color: #00f;
   padding: 10px;
-  position: relative;
+  /* position: relative;
   top: 300px;
-  left: 400px;
+  left: 400px; */
   border: 2px solid rgb(100, 100, 255);
   border-radius: 5px;
   width: 250px;
@@ -93,9 +103,9 @@ body {
   color: #fff;
   background-color: #00f;
   padding: 10px;
-  position: relative;
+  /* position: relative;
   top: 300px;
-  left: 600px;
+  left: 600px; */
   border: 2px solid rgb(100, 100, 255);
   border-radius: 5px;
   width: 250px;
@@ -121,6 +131,7 @@ body {
   background-color: white;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 3%;
 }
 
 .index_f-item a {
@@ -355,19 +366,34 @@ body {
 /* releace_view.php */
 
 .ReleaceView_Table {
-  width: 100%;
+   width: 300px;
 }
 
 .ReleaceView_Table table tr {
+  /* border-collapse: collapse; */
+  /* width: 100%; */
+}
+table td{
   border-collapse: collapse;
-  width: 100%;
-  border: solid 1px black;
 }
 
 .ReleaceView_Table td {
   border: solid 1px black;
+  background-color: white;
   padding: 8px;
 }
+
+.ReleaceView_Table table th{
+  background-color: transparent;
+  border: none;
+  width: 200px;
+}
+
+.myrecipelist_page {
+  text-align: center;
+}
+
+/* releace_view.php */
 
 .ReleaceView_User {
   display: flex;
@@ -376,24 +402,14 @@ body {
 }
 
 .ReleaceView_Recipe {
-  display: flex;
-  width: 1400px;
+  text-align: center;
   height: 50px;
   font-size: 30px;
   font-weight: bold;
-  align-items: center;
-  justify-content: center;
 }
 
 .ReleaceView_Table {
-  width: 30%;
-  height: 40px;
-  display: flex;
   font-size: 20px;
-  margin-left: auto;
-  margin-right: 250px;
-  table-layout: fixed;
-  justify-content: right;
 }
 
 .ReleaceView_Table table tr {
@@ -407,30 +423,48 @@ body {
 }
 
 .ReleaceView_Set {
+  margin: 0 auto;
+  width: 70%;
   display: flex;
+  justify-content: space-around;
+  align-items: flex-start; 
 }
 
+.ReleaceView_Image{ 
+  margin-top: 31px;
+  margin-right: 0;
+  width:400px;
+}
+.ReleaceView_Image img{
+  width:400px; 
+  height:300px;
+}
 .ReleaceView_Intro {
   height: 100px;
-  margin: 0 0 0 160px;
-  /* display: grid; */
   position: relative;
 }
 
-.ReleaceView_proc {
+.ReleaceView_Proc {
   height: 100px;
-  margin: 100px 0 0 160px;
-  line-height: 50px;
-  display: inline-block;
+  width: 50%;
+  margin: 0 0 40px 25%;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.ReleaceView_Method {
+  margin: 0 25%;
+}
+
+.myrecipelist_HedContent{
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
 }
 
 /* myrecipe_list.php */
-
-.myrecipelist_content {
-  width: 60%;
-  margin: 0 auto;
-  padding-bottom: 150px;
-}
 
 .myrecipelist_title {
   text-align: center;
@@ -438,15 +472,12 @@ body {
 }
 
 .myrecipelist_make {
-  display: inline-block;
   background-color: #00f;
   color: #ffffff;
   text-align: center;
   font-size: 25px;
-  position: relative;
-  bottom: 80px;
-  left: 605px;
-  width: 350px;
+  border-radius: 10px;
+  padding: 10px;
   border: none;
   font-weight: bold;
   transition: all 0.15s linear;
@@ -459,10 +490,14 @@ body {
 }
 
 .myrecipelist_user {
-  position: absolute;
+  /* position: absolute;
   top: 90px;
-  left: 10px;
-  font-size: 30px;
+  left: 10px; */
+  font-size: 20px;
+}
+
+.Question_DragglbleH3{
+  text-align: center;
 }
 
 footer {
