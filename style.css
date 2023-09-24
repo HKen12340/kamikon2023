@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-body{
+body {
   background-image: url("components/back.png");
 }
 
@@ -22,7 +22,7 @@ body{
 .loginview_pswd {
   width: 98%;
   height: 40px;
-  font-size: 100%; 
+  font-size: 100%;
 }
 .loginview_rgin:hover {
   background-color: rgb(118, 118, 255);
@@ -248,228 +248,119 @@ body{
   background-color: rgb(118, 118, 255);
 }
 
-.RegistRecipe_Picform {
-  color: #ffffff;
-  background-color: #384878;
-  border: 10px dotted black;
-  border-radius: 10px;
-  width: 710px;
-  height: 300px;
-  position: relative;
-  top: 75px;
-  left: 450px;
+.registrecipe_content {
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 150px;
+}
+
+.registrecipe_h1 {
   text-align: center;
+  font-size: 225%;
 }
 
-.RegistRecipe_Picform input[type="file"] {
-  cursor: pointer;
-  width: 710px;
-  height: 300px;
-  opacity: 0;
-  position: relative;
-  bottom: 35px;
-  right: 10px;
+.registrecipe_registForm {
 }
 
-.RegistRecipe_Iconform {
-  color: #0a0a0a;
-  background-color: #07fb71;
-  border: 10px dotted black;
-  border-radius: 10px;
-  width: 710px;
-  height: 300px;
-  position: relative;
-  top: 40px;
-  left: 450px;
-  text-align: center;
+.registrecipe_category {
+  font-size: 175%;
 }
 
-.RegistRecipe_Iconform input[type="file"] {
-  cursor: pointer;
-  width: 710px;
-  height: 300px;
-  position: relative;
-  opacity: 0;
-  /* display: none; */
-  position: relative;
-  bottom: 35px;
-  right: 10px;
-}
-
-.registrecipe_page {
-  position: relative;
-  height: 150%;
-}
-
-.registrecipe_form {
-  position: absolute;
-  right: 52.5%;
-}
-
-.registrecipe_title {
-  position: relative;
-  top: 60px;
-  left: 250px;
-  font-size: 150%;
-}
-
-.registrecipe_input-recipe {
-  position: relative;
-  left: 450px;
+.registrecipe_inputRecipeName {
   width: 100%;
   height: 50px;
   font-size: 150%;
 }
 
-.registrecipe_intro {
-  position: relative;
-  top: 50px;
-  left: 250px;
-  font-size: 150%;
-}
-
-.registrecipe_intro-text {
-  position: relative;
+.registrecipe_inputRecipeIntro {
   width: 100%;
-  bottom: 10px;
-  left: 450px;
   font-size: 200%;
 }
 
-.registrecipe_mate {
-  position: relative;
-  top: 25px;
-  left: 140px;
-  font-size: 150%;
+.textbox {
+  width: 100%;
+}
+.textarea {
+  width: 100%;
 }
 
-.registrecipe_amou {
-  position: relative;
-  top: 25px;
-  left: 390px;
-  font-size: 150%;
+.registrecipe_TdRightPadding {
+  padding-right: 15px;
 }
 
-.registrecipe_mate-text {
-  position: relative;
-  top: 25px;
-  left: 450px;
-  font-size: 150%;
-  margin-top: 20px;
+.registrecipe_TdLeftPadding {
+  padding-left: 15px;
 }
 
-.registrecipe_amou-text {
-  position: relative;
-  top: 25px;
-  left: 550px;
+.registrecipe_inputMaterial {
+  width: 100%;
+  text-align: left;
   font-size: 150%;
   margin-top: 20px;
 }
 
-.registrecipe_add1 {
-  position: relative;
-  top: 75px;
-  left: 510px;
-  width: 25%;
+.registrecipe_inputAmount {
+  width: 100%;
+  text-align: right;
+  font-size: 150%;
+  margin-top: 20px;
+}
+.registrecipe_MatelialButtonArea {
+  display: flex;
+}
+
+.registrecipe_addButton,
+.registrecipe_deleteButton,
+.registrecipe_submit {
+  background-color: #00f;
+  color: #fff;
+  padding: 10px 40px;
+  border: none;
+  font-weight: bold;
+  transition: all 0.15s linear;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.registrecipe_addButton,
+.registrecipe_deleteButton {
+  width: 70%;
+  margin: 20px 30px;
   font-size: 150%;
 }
 
-.registrecipe_delete1 {
-  position: relative;
-  top: 75px;
-  left: 745px;
-  width: 25%;
+.registrecipe_addButton:hover,
+.registrecipe_deleteButton:hover,
+.registrecipe_submit:hover {
+  opacity: 0.5;
+}
+
+.registrecipe_recipeNum {
   font-size: 150%;
 }
 
-.registrecipe_method {
-  position: relative;
-  top: 100px;
-  left: 250px;
-  font-size: 150%;
-}
-
-.registrecipe_method-num {
-  position: relative;
-  top: 50px;
-  left: 415px;
-  font-size: 150%;
-}
-
-.registrecipe_method-text {
-  position: relative;
-  left: 450px;
-  width: 136%;
+.registrecipe_inputRecipe {
+  width: 100%;
   font-size: 150%;
   margin-top: 20px;
 }
 
-.registrecipe_add2 {
-  position: relative;
-  top: 50px;
-  left: 510px;
-  width: 25%;
-  font-size: 150%;
-}
-
-.registrecipe_delete2 {
-  position: relative;
-  top: 50px;
-  left: 745px;
-  width: 25%;
-  font-size: 150%;
-}
-
-.registrecipe_icon1 {
-  position: relative;
-  top: 100px;
-  left: 250px;
-  font-size: 150%;
-}
-
-.registrecipe_icon2 {
-  position: relative;
-  top: 150px;
-  left: 250px;
+.registrecipe_pointName {
   font-size: 150%;
 }
 
 .registrecipe_point {
   position: absolute;
-  left: 665px;
+  left: 75%;
   font-size: 150%;
 }
 
-.registrecipe_point-title {
-  position: relative;
-  top: 150px;
-  left: 450px;
-  font-size: 150%;
-}
-
-.registrecipe_reg {
-  position: relative;
-  top: 250px;
-  left: 610px;
+.registrecipe_submit {
+  margin: 10px auto;
   width: 50%;
-  font-size: 200%;
+  font-size: 225%;
 }
 
-.registrecipe_Iconpics {
-  position: relative;
-  bottom: 175px;
-  left: 800px;
-}
-
-.registrecipe_Imgpics {
-  position: relative;
-  bottom: 375px;
-  left: 10px;
-}
-
-.registrecipe_SubmitArea {
-  padding-bottom: 300px;
-}
 .ReleaceView_Table {
    width: 300px;
 }
@@ -487,6 +378,7 @@ table td{
   background-color: white;
   padding: 8px;
 }
+
 .ReleaceView_Table table th{
   background-color: transparent;
   border: none;
@@ -543,15 +435,21 @@ table td{
 }
 .ReleaceView_Intro {
   height: 100px;
-  /* display: grid; */
   position: relative;
 }
 
-.ReleaceView_proc {
+.ReleaceView_Proc {
   height: 100px;
-  margin: 100px 0 0 160px;
-  line-height: 50px;
-  display: inline-block;
+  width: 50%;
+  margin: 0 0 40px 25%;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.ReleaceView_Method {
+  margin: 120px 0 0 25%;
 }
 
 .myrecipelist_HedContent{
@@ -600,4 +498,3 @@ footer {
   width: 100%;
   background-color: rgb(221, 217, 217);
 }
-
