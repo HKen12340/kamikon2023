@@ -48,6 +48,7 @@ class User extends DB_connect{
     }catch(PDOException $e){
       echo "エラーが発生しました".$e->getMessage();
     } 
+ 
   }
 
 
@@ -76,5 +77,8 @@ class User extends DB_connect{
       echo "エラーが発生しました".$e->getMessage();
     } 
   }  
+  public function __destruct(){
+    $this->pdo = null;   
+  }
 }
 

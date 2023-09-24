@@ -121,6 +121,7 @@ body {
   background-color: white;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 3%;
 }
 
 .index_f-item a {
@@ -430,21 +431,23 @@ body {
   margin: 120px 0 0 25%;
 }
 
+.myrecipelist_HedContent{
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+}
+
 .myrecipelist_title {
   text-align: center;
   font-size: 35px;
 }
 
 .myrecipelist_make {
-  display: inline-block;
   background-color: #00f;
   color: #ffffff;
   text-align: center;
   font-size: 25px;
-  position: relative;
-  bottom: 80px;
-  left: 605px;
-  width: 350px;
+  padding: 10px;
   border: none;
   font-weight: bold;
   transition: all 0.15s linear;
@@ -457,9 +460,9 @@ body {
 }
 
 .myrecipelist_user {
-  position: absolute;
+  /* position: absolute;
   top: 90px;
-  left: 10px;
+  left: 10px; */
   font-size: 30px;
 }
 

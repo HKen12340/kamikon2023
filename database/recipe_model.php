@@ -191,4 +191,8 @@ class Recipe_model extends DB_connect{
   $result = $stmt->fetch(PDO::FETCH_ASSOC);
   return $result['maxrecipe'];
 }
+
+public function __destruct(){
+  $this->pdo = null;   
+}
 }
