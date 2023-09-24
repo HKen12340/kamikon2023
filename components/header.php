@@ -69,7 +69,7 @@
           <ul>
           <li><a href="/kamikon2023/index.php">みんなのレシピ</a></li>
             <li><a href="/kamikon2023/content/my_recipe/myrecipe_list.php">Myレシピ</a></li>
-            <li><a href="/kamikon2023/content/question/question.php">質問</a></li>
+            <li><a href="/kamikon2023/content/question/question.php">レシピ提案</a></li>
             <li><a href="/kamikon2023/content/Indetification/ImageSet.php">画像識別</a></li>
             <?php 
               session_start();

@@ -16,7 +16,7 @@
     require('../../database/user_model.php');
     $user = new User();
     $result = $user->user_info($_SESSION["user_id"]);
-    print '<p class="myrecipelist_user">user:'.$result["user_name"].'</p>';
+    print '<p class="myrecipelist_user">ユーザ名:'.$result["user_name"].'</p>';
   ?>
   <h2 class="myrecipelist_title">Myレシピ一覧</h2>    
   <a href="regist_recipe.php" class="myrecipelist_make">レシピ作成</a>
