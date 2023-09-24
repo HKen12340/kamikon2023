@@ -237,6 +237,8 @@ body {
   background-color: rgb(118, 118, 255);
 }
 
+/* regist_recipe.php */
+
 .registrecipe_content {
   width: 60%;
   margin: 0 auto;
@@ -350,6 +352,8 @@ body {
   font-size: 225%;
 }
 
+/* releace_view.php */
+
 .ReleaceView_Table {
   width: 100%;
 }
@@ -365,10 +369,6 @@ body {
   padding: 8px;
 }
 
-.myrecipelist_page {
-  text-align: center;
-}
-/* releace_view.php */
 .ReleaceView_User {
   display: flex;
   margin-top: 30px;
@@ -422,6 +422,14 @@ body {
   margin: 100px 0 0 160px;
   line-height: 50px;
   display: inline-block;
+}
+
+/* myrecipe_list.php */
+
+.myrecipelist_content {
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 150px;
 }
 
 .myrecipelist_title {

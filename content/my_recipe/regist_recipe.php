@@ -36,10 +36,10 @@ if (session_status() == PHP_SESSION_NONE) {
   
 <form enctype="multipart/form-data" method="post" class="registrecipe_form">
   <p class="registrecipe_category">レシピ名</p>
-  <input type="text" name="recipe_name" class="registrecipe_inputRecipeName">
+  <input type="text" name="recipe_name" class="registrecipe_inputRecipeName" required>
 
   <p class="registrecipe_category">紹介文</p>
-  <textarea rows="10" name="introductions" class="registrecipe_inputRecipeIntro"></textarea>
+  <textarea rows="10" name="introductions" class="registrecipe_inputRecipeIntro" required></textarea>
 
   <table class="textbox">
     <tr>
@@ -47,8 +47,8 @@ if (session_status() == PHP_SESSION_NONE) {
       <th class="registrecipe_category">量</th>
     </tr>
     <tr>
-      <td class="registrecipe_TdRightPadding"><input type="text" name="matelial[]" class="registrecipe_inputMaterial"></td>
-      <td class="registrecipe_TdLeftPadding"><input type="text" name="amount[]" class="registrecipe_inputAmount"></td>
+      <td class="registrecipe_TdRightPadding"><input type="text" name="matelial[]" class="registrecipe_inputMaterial" required></td>
+      <td class="registrecipe_TdLeftPadding"><input type="text" name="amount[]" class="registrecipe_inputAmount" required></td>
     </tr>
   </table>
 
@@ -103,8 +103,8 @@ if (session_status() == PHP_SESSION_NONE) {
     $(".add").on("click",function(){
         $(".textbox").append(`
           <tr class="ip_text${count}">
-            <td class="registrecipe_TdRightPadding"><input type="text" name="matelial[]" class="registrecipe_inputMaterial"></td>
-            <td class="registrecipe_TdLeftPadding"><input type="text" name="amount[]" class="registrecipe_inputAmount"></td>
+            <td class="registrecipe_TdRightPadding"><input type="text" name="matelial[]" class="registrecipe_inputMaterial" required></td>
+            <td class="registrecipe_TdLeftPadding"><input type="text" name="amount[]" class="registrecipe_inputAmount" required></td>
           </tr>
         `);
         count++;
@@ -121,7 +121,7 @@ if (session_status() == PHP_SESSION_NONE) {
           <tr class="prod_textarea${prod_count}">
             <td>
               <p class="registrecipe_recipeNum">${prod_count}.</p>
-              <textarea rows="10" name="prod[]" class="registrecipe_inputRecipe"></textarea>
+              <textarea rows="10" name="prod[]" class="registrecipe_inputRecipe" required></textarea>
               <div class="registrecipe_category"> 
               画像追加：<input type="file" name="iconfile" accept="image/*">
               </div>
@@ -135,7 +135,7 @@ if (session_status() == PHP_SESSION_NONE) {
           <tr class="prod_textarea${prod_count}">
             <td>
               <p class="registrecipe_recipeNum">${prod_count}.</p>
-              <textarea name="prod[]" rows="10" class="registrecipe_inputRecipe"></textarea>
+              <textarea name="prod[]" rows="10" class="registrecipe_inputRecipe" required></textarea>
               <div class="registrecipe_category"> 
               画像追加：<input type="file" name="iconfile" accept="image/*">
               </div>
