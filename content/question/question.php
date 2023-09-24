@@ -50,20 +50,37 @@
     border-radius: 5px;
 
   }
-  #submit_Btn:hover{
-    /* background-color: aqua; */
-  }
   .SubmitBtn_Area{
     margin-top: 50px;
     text-align: center;
+  }
+  .container {
+  position: relative;
+}
+
+  #start_scene{
+    margin-top: 12%;
+    text-align: center;
+  }
+  #QuesStartBtn{
+    padding: 10px 60px;
+    background-color: blue;
+    font-size: 20px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+  }
+
+  #QuesStartBtn:hover{
+    background-color: rgb(110, 110, 246);
   }
 </style>
 <body>
     
 <?php require '../../components/header.php';?>
 <div id="start_scene">
-  <h2>質問の解答に合わせて、最適なレシピを提案します</h2>
-  <button id = "QuesStartBtn">スタート</button>
+    <h2>質問の解答に合わせて、最適なレシピを提案します</h2>
+    <button id = "QuesStartBtn">スタート</button>
 </div>
 <div id="draggable_scene">
   <h3 class="Question_DragglbleH3">6つの要素を重要度の高い順にドラックアンドドロップで配置してください</h3>
