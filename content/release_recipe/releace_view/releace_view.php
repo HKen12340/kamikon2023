@@ -39,23 +39,27 @@
       print '<br/>';
 
       // レシピ画像
-      echo '<section class="ReleaceView_Set"><div class="ReleaceView_Image"><div style="width: 500px; margin-top: 65px; margin-left: 200px;">';
-      echo '<div align="left"><img src="'.$icon.'" width="500" height="300"><p class="caption"></p></div>';
-      echo '</div>';
-      print '<br/>';
+      echo '<section class="ReleaceView_Set">
+              <div class="ReleaceView_Image">
+                   <img src="'.$icon.'">
+                   <p class="caption"></p>';
 
       // 紹介文
       echo '<div class="ReleaceView_Intro">';
       echo $result["introductions"];
-      echo '</div></div>';
+      echo '</div>
+        </div>';
 
       // 材料＆量
       $material = explode(",", $result["material_names"]);
       $amounts = explode(",", $result["amounts"]);
       echo '<div class="ReleaceView_Table"><table>';
-      echo '<tr><th>材料</th><th>量</th>';
+      echo '<tr>
+              <th class="ReleaceView_TableCaption">材料</th>
+              <th class="ReleaceView_TableCaption">量</th>
+            </tr>';
       for ($i = 0; $i < count($material); $i++){
-        echo '<tr bgcolor="#fff"><td>'.$material[$i].'</td><td>'.$amounts[$i].'</td></tr>';
+        echo '<tr><td>'.$material[$i].'</td><td>'.$amounts[$i].'</td></tr>';
       }
       echo '</table></div></section>';
       print '<br/>';
