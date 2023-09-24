@@ -39,5 +39,9 @@
         }
       }
 
+      public function __destruct(){
+        $this->pdo = null;   
+      }
+
   }
 ?>

@@ -15,10 +15,18 @@
   font-size:30px;
   color:gray;
 }
+.loginview_ErrorMes{
+  text-align: center;
+  color: red;
+}
 </style>
 <body>
-<?php 
-      
+
+  <section class="loginview_card">
+    <h1 class="loginview_Cardtitle" >COOKING CROSS</h1>
+    <form name="login_form" method="post">
+      <table>
+      <?php       
       require './database/user_model.php';
 
     if(!empty($_POST)){
@@ -27,23 +35,25 @@
         if($user->user_login($_POST['email'],$_POST['password'])){
           header('Location: index.php');
         }else{
-          print '<p>メールアドレスかパスワードが間違っています</p>';
+          print '<div class="loginview_ErrorMes">
+                  <label>メールアドレスかパスワードが間違っています</label>
+                 </div>';
         }
       }
 
       if(empty($_POST['email'])){
-        print '<p>メールアドレスの入力は必須です。</p>';
+        print '<div class="loginview_ErrorMes">
+                <label>メールアドレスの入力は必須です</label>
+               </div>';
       }
     
       if(empty($_POST['password'])){
-        print '<p>パスワードの入力は必須です。</p>';
+        print '<div class="loginview_ErrorMes">
+                <label>パスワードの入力は必須です</label>
+               </div>';
       }
     }
 ?>
-  <section class="loginview_card">
-    <h1 class="loginview_Cardtitle" >COOKING CROSS</h1>
-    <form name="login_form" method="post">
-      <table>
         <tr>
           <td class=""><input class="loginview_mlad" type="email" name="email" placeholder="メールアドレス" required></td>
         </tr>
