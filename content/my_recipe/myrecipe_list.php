@@ -10,6 +10,8 @@
 </head>
 
 <body class="myrecipelist_page">
+<h2 class="myrecipelist_title">Myレシピ一覧</h2>
+<a href="regist_recipe.php" class="myrecipelist_make">レシピ作成</a>
 
 <div class="myrecipelist_HedContent">
   <?php 
