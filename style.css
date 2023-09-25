@@ -296,14 +296,12 @@ body {
 
 .registrecipe_inputMaterial {
   width: 100%;
-  text-align: left;
   font-size: 150%;
   margin-top: 20px;
 }
 
 .registrecipe_inputAmount {
   width: 100%;
-  text-align: right;
   font-size: 150%;
   margin-top: 20px;
 }
@@ -452,6 +450,12 @@ table td{
   border: 1px solid #000;
   border-radius: 20px;
   background-color: #fff;
+  display:flex;
+  align-items:center;
+}
+.ReleaceView_ProcP{
+  width: 85%;
+  overflow-wrap:break-word;
 }
 
 .ReleaceView_Method {

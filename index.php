@@ -21,10 +21,15 @@
 }
 $result = $recipe->get_recipeList($now);
 foreach($result as $res){
+  if(!empty($res["icon"])){
+    $icon = $res["icon"];
+  }else{
+    $icon = "components/NoImage.png";
+  }
   print '
   <div class="index_f-item">
-    <a href = "/kamikon2023/content/release_recipe/releace_view/releace_view.php?id='.$res["id"].'">'.
-      '<img src='.$res["icon"].'>'.'</img>'.$res["recipe_name"].'
+    <a href = "/kamikon2023/content/release_recipe/releace_view/releace_view.php?id='.$res["id"].'">
+      <img src='.$icon.'></img>'.$res["recipe_name"].'
     </a>
     <p>by '.$res['user_name'].'</p>
   </div>';
