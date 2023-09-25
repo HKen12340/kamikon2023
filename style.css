@@ -72,7 +72,7 @@ body {
   /* width: 850px; */
 }
 
-.question_YesNoButtonArea{
+.question_YesNoButtonArea {
   display: flex;
   justify-content: space-around;
   margin-top: 100px;
@@ -366,14 +366,14 @@ body {
 /* releace_view.php */
 
 .ReleaceView_Table {
-   width: 300px;
+  width: 300px;
 }
 
 .ReleaceView_Table table tr {
   /* border-collapse: collapse; */
   /* width: 100%; */
 }
-table td{
+table td {
   border-collapse: collapse;
 }
 
@@ -383,7 +383,7 @@ table td{
   padding: 8px;
 }
 
-.ReleaceView_Table table th{
+.ReleaceView_Table table th {
   background-color: transparent;
   border: none;
   width: 200px;
@@ -427,17 +427,17 @@ table td{
   width: 70%;
   display: flex;
   justify-content: space-around;
-  align-items: flex-start; 
+  align-items: flex-start;
 }
 
-.ReleaceView_Image{ 
+.ReleaceView_Image {
   margin-top: 31px;
   margin-right: 0;
-  width:400px;
+  width: 400px;
 }
-.ReleaceView_Image img{
-  width:400px; 
-  height:300px;
+.ReleaceView_Image img {
+  width: 400px;
+  height: 300px;
 }
 .ReleaceView_Intro {
   height: 100px;
@@ -458,10 +458,10 @@ table td{
   margin: 0 25%;
 }
 
-.myrecipelist_HedContent{
+.myrecipelist_HedContent {
   display: flex;
   justify-content: space-around;
-  align-items:center;
+  align-items: center;
 }
 
 /* myrecipe_list.php */
@@ -496,7 +496,11 @@ table td{
   font-size: 20px;
 }
 
-.Question_DragglbleH3{
+.Question_DragglbleH3 {
+  text-align: center;
+}
+
+.imageset_page {
   text-align: center;
 }
 
