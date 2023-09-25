@@ -33,8 +33,8 @@ class Recipe_model extends DB_connect{
   //指定したレシピを取得 
   public function get_recipe($num){
     try{
-      $sql = 'SELECT id, user_id, recipe_name,icon,introductions, material_names, amounts, 
-      procedures, Release_flag, create_at FROM recipe a INNER JOIN recipe_picture b ON
+      $sql = 'SELECT id, user_id, recipe_name,icon,introductions, material_names, amounts,img_name ,
+      procedures, create_at FROM recipe a INNER JOIN recipe_picture b ON
       a.id = b.recipe_id  WHERE id = :id';
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(":id",$num);
@@ -89,35 +89,47 @@ class Recipe_model extends DB_connect{
       $amounts = implode(",",$post["amount"]);
       $stmt->bindValue(":amounts",$amounts);
 
-      $procedures = implode(",",$post["procedures"]);
+      $procedures = implode(",",$post["prod"]);
       $stmt->bindValue(":procedures",$procedures);
 
       $stmt->bindValue(":Release_flag",1);
       
       $res = $stmt->execute();
 
-      // var_dump($_FILES['iconfile']);
-      $icon = uniqid(mt_rand());
-      $icon .= '.' . substr(strrchr($_FILES['iconfile']['name'], '.'), 1);//アップロードされたファイルの拡張子を取得
-      $iconfile = "../../upload/$icon";
-      
+
       $sql = "INSERT INTO recipe_picture(recipe_id,icon,img_name) VALUES ((SELECT max(id)
-      FROM recipe WHERE user_id = ".$_SESSION['user_id']."),:icon,:img_name);";
-      
+        FROM recipe WHERE user_id = ".$_SESSION['user_id']."),:icon,:img_name);";
       $stmt = $this->pdo->prepare($sql);
-      $stmt->bindValue(':icon', "/kamikon2023/upload/".$icon, PDO::PARAM_STR);
-      //if (!empty($_FILES['iconfile']['name'])) {//ファイルが選択されていれば$imageにファイル名を代入
-          move_uploaded_file($_FILES['iconfile']['tmp_name'], $iconfile);//imagesディレクトリにファイル保存
 
+      // var_dump($_FILES['iconfile']);
+      if($_FILES["iconfile"]['name'] != null){
+        $icon = uniqid(mt_rand());
+        $icon .= '.' . substr(strrchr($_FILES['iconfile']['name'], '.'), 1);//アップロードされたファイルの拡張子を取得
+        $iconfile = "../../upload/$icon";
+
+        $stmt->bindValue(':icon', "/kamikon2023/upload/".$icon, PDO::PARAM_STR);
+        //if (!empty($_FILES['iconfile']['name'])) {//ファイルが選択されていれば$imageにファイル名を代入
+        move_uploaded_file($_FILES['iconfile']['tmp_name'], $iconfile);//imagesディレクトリにファイル保存
+      }else{
+        $stmt->bindValue(':icon',"", PDO::PARAM_STR);
+      }
           $image_path = [];
-        foreach($_FILES['imagefile']['name'] as $no => $tmp){
-          $image = uniqid(mt_rand());
-          $image .= '.' . substr(strrchr($_FILES['imagefile']['name'][$no], '.'), 1);//アップロードされたファイルの拡張子を取得
-          $imagefile = "../../upload/$image";
+          $ImageCount = count($_FILES) - 1;
+        // foreach($_FILES['imagefile']['name'] as $no => $tmp){
+          for($i = 1;$i <= $ImageCount;$i++){
+            if($_FILES["imagefile$i"]['name'] != null){
+              $image = uniqid(mt_rand());
+              $image .= '.' . substr(strrchr($_FILES["imagefile$i"]['name'], '.'), 1);//アップロードされたファイルの拡張子を取得
+              $imagefile = "../../upload/$image";
 
-          array_push($image_path,"/kamikon2023/upload/".$image);
-          move_uploaded_file($_FILES['imagefile']['tmp_name'][$no],$imagefile);//imagesディレクトリにファイル保存
-        }
+              array_push($image_path,"/kamikon2023/upload/".$image);
+              move_uploaded_file($_FILES["imagefile$i"]['tmp_name'],$imagefile);//imagesディレクトリにファイル保存
+              
+            }else{
+              array_push($image_path,"");
+            }
+          }
+        // }
         $imgages = implode(',',$image_path);
         $stmt->bindValue(':img_name', $imgages , PDO::PARAM_STR);
         $stmt->execute();
