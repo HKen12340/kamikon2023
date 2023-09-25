@@ -4,11 +4,11 @@
   $result = $recipe->get_recipe($_GET["id"]);
   $title = $result["recipe_name"];
 
-  $photo = $recipe->get_recipe($_GET["id"]);
-  if (isset($photo["icon"])) {
-    $icon = $photo["icon"];
+  $photo = $result["icon"];
+  if (!empty($photo)) {
+    $icon = $photo;
   } else {
-      $icon = $photo[""];
+      $icon = "../../../components/NoImage.png";
   }
 
   require("../../../database/user_model.php");
@@ -66,12 +66,23 @@
       
       // 調理方法
       $procedures = explode(",", $result["procedures"]);
+      $images = explode(",",$result['img_name']);
       echo '<h2 class="ReleaceView_Method">作り方</h2>';
       for ($i = 0; $i < count($procedures); $i++){
         echo '<div class="ReleaceView_Proc">';
-        echo '['.($i+1).'] '.$procedures[$i].'<br/>';
-        echo '</div>';
+        echo '<div class="ReleaceView_ProcP"> ['.($i+1).'] '.$procedures[$i].'</div>';
+        if($images[$i] != null){
+          echo 
+            "
+            <img src=".$images[$i]."  width='100px'>
+            ";
+        }
+        echo "<br/>";
+        echo "</div>";
       }
+
+      
     ?>
+    <!-- <div height='100%' style='text-align: right'> </div>-->
   </body>
 </html>

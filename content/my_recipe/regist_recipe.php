@@ -14,14 +14,13 @@ if (session_status() == PHP_SESSION_NONE) {
   }
  if(!empty($_POST)){
   $res = new Recipe_model();
-  $res->create_recipe($_POST); 
+  $res->create_recipe($_POST);
   header('location: myrecipe_list.php');
  }
 
 ?>
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../style.css">
@@ -47,13 +46,17 @@ if (session_status() == PHP_SESSION_NONE) {
       <th class="registrecipe_category">量</th>
     </tr>
     <tr>
-      <td class="registrecipe_TdRightPadding"><input type="text" name="matelial[]" class="registrecipe_inputMaterial" required></td>
-      <td class="registrecipe_TdLeftPadding"><input type="text" name="amount[]" class="registrecipe_inputAmount" required></td>
+      <td class="registrecipe_TdRightPadding">
+        <input type="text" name="matelial[]" class="registrecipe_inputMaterial" required>
+      </td>
+      <td class="registrecipe_TdLeftPadding">
+        <input type="text" name="amount[]" class="registrecipe_inputAmount" required>
+      </td>
     </tr>
   </table>
 
   <div class="registrecipe_MatelialButtonArea">
-    <button type="button" class="add registrecipe_addButton" >追加</button>
+    <button type="button" class="add registrecipe_addButton">追加</button>
     <button type="button" class="delete registrecipe_deleteButton">削除</button>
   </div>
 
@@ -123,7 +126,7 @@ if (session_status() == PHP_SESSION_NONE) {
               <p class="registrecipe_recipeNum">${prod_count}.</p>
               <textarea rows="10" name="prod[]" class="registrecipe_inputRecipe" required></textarea>
               <div class="registrecipe_category"> 
-              画像追加：<input type="file" name="iconfile" accept="image/*">
+              画像追加：<input type="file" name="imagefile1" accept="image/*">
               </div>
             </td>
           </tr>
@@ -137,7 +140,7 @@ if (session_status() == PHP_SESSION_NONE) {
               <p class="registrecipe_recipeNum">${prod_count}.</p>
               <textarea name="prod[]" rows="10" class="registrecipe_inputRecipe" required></textarea>
               <div class="registrecipe_category"> 
-              画像追加：<input type="file" name="iconfile" accept="image/*">
+              画像追加：<input type="file" name="imagefile${prod_count}" accept="image/*">
               </div>
             </td>
           </tr>
