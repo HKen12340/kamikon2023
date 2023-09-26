@@ -12,19 +12,21 @@
 <div class="index_f-container">
   <?php
 require("../../database/question_model.php");
-$ques = new Question_model();
-$result = $ques->GetRecipes($_COOKIE["Ques_ansawer"]);
- 
-foreach($result as $res){
-  print '
-  <div class="index_f-item">
-    <a href = "/kamikon2023/content/release_recipe/releace_view/releace_view.php?id='.$res["id"].'">'.
-      '<img src='.$res["icon"].'>'.'</img>'.$res["recipe_name"].'
-    </a>
-    <p>by '.$res['user_name'].'</p>
-  </div>';
-}
-print '</div>'; //index_f-containerクラスここまで
+
+
+  $ques = new Question_model();
+  $result = $ques->GetRecipes($_COOKIE["Ques_ansawer"]);
+  foreach($result as $res){
+    print '
+    <div class="index_f-item">
+      <a href = "/kamikon2023/content/release_recipe/releace_view/releace_view.php?id='.$res["id"].'">'.
+        '<img src='.$res["icon"].'>'.'</img>'.$res["recipe_name"].'
+      </a>
+      <p>by '.$res['user_name'].'</p>
+    </div>';
+  }
+  print '</div>'; //index_f-containerクラスここまで
+
 ?>
 </body>
 </html>
