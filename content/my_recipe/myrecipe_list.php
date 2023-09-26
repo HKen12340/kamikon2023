@@ -21,7 +21,6 @@
   <a href="regist_recipe.php" class="myrecipelist_make">レシピ作成</a>
 </div>
 
-<div class="index_f-container">
   <?php 
     require('../../database/recipe_model.php');
     if (session_status() == PHP_SESSION_NONE) {
@@ -42,7 +41,10 @@
 $result = $recipe->get_MyrecipeList($now,$_SESSION["user_id"]);
 if($result == null){
   print '<h2 style = "text-align:center">レシピはまだ登録されていません</h2>';
-}else{
+}
+
+print '<div class="index_f-container">';
+if($result != null){
   foreach($result as $res){
     print '
     <div class="index_f-item">

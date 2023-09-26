@@ -78,9 +78,19 @@
 <body>
     
 <?php require '../../components/header.php';?>
+
 <div id="start_scene">
-    <h2>質問の解答に合わせて、最適なレシピを提案します</h2>
-    <button id = "QuesStartBtn">スタート</button>
+  <?php
+  require("../../database/recipe_model.php");
+  $recipe = new Recipe_model();
+    if($recipe->maxrecipe() >= 6){
+      print "<h2>質問の解答に合わせて、最適なレシピを提案します</h2>
+      <button id = 'QuesStartBtn'>スタート</button>";
+    }else{
+      print "<h1 style='text-align:center'>登録レシピ数が6件以下の為、利用できません。</h1>";
+    }
+
+    ?>
 </div>
 <div id="draggable_scene">
   <h3 class="Question_DragglbleH3">6つの要素を重要度の高い順にドラックアンドドロップで配置してください</h3>
