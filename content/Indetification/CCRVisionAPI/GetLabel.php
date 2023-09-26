@@ -10,13 +10,16 @@
   require("../../../database/identification_model.php");
   require("VisionApi.php");
   $material_list = [
-    ["eg" => "","ja" => "人参"],
+    ["eg" => "Carrot","ja" => "人参"],
     ["eg" => "Potato","ja" => "ジャガイモ"],
     ["eg" => "meat","ja" => "肉"],
     ["eg" => "beef","ja" => "肉"],
     ["eg" => "pork","ja" => "肉"],
-    ["eg" => "","ja" => "トマト"],
+    ["eg" => "Tomato","ja" => "トマト"],
     ["eg" => "egg","ja" => "卵"],
+    ["eg" => "Bell Pepper","ja" => "ピーマン"],
+    ["eg" => "Onion","ja" => "玉ねぎ"],
+    ["eg" => "Fish","ja" => "魚"],
   ];
 
   $upload = "sample-images/target-image.jpg";

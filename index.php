@@ -94,7 +94,7 @@ if($result != null){
   </ul>';
   }
 
-  print "<p class='index_search'>$max_recipe; ?>件中 $from_record - $to_record 件目を表示</p>"; 
+  print "<p class='index_search'>$max_recipe 件中 $from_record - $to_record 件目を表示</p>"; 
 }
   ?>
  </section>
