@@ -450,12 +450,12 @@ table td {
   border: 1px solid #000;
   border-radius: 20px;
   background-color: #fff;
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
 }
-.ReleaceView_ProcP{
+.ReleaceView_ProcP {
   width: 85%;
-  overflow-wrap:break-word;
+  overflow-wrap: break-word;
 }
 
 .ReleaceView_Method {
@@ -475,7 +475,8 @@ table td {
   font-size: 35px;
 }
 
-.myrecipelist_make {
+.myrecipelist_make,
+.myrecipeview_deleteButton {
   background-color: #00f;
   color: #ffffff;
   text-align: center;
@@ -489,8 +490,9 @@ table td {
   cursor: pointer;
 }
 
-.myrecipelist_make:hover {
-  background-color: rgb(118, 118, 255);
+.myrecipelist_make:hover,
+.myrecipeview_deleteButton:hover {
+  opacity: 0.5;
 }
 
 .myrecipelist_user {
@@ -506,6 +508,10 @@ table td {
 
 .imageset_page {
   text-align: center;
+}
+
+.myrecipeview_deleteButton {
+  float: right;
 }
 
 footer {
