@@ -55,48 +55,48 @@ if($now == 1 || $now == $max_page) {
 }
 
 print '<section class="index_footer">';
-
-if ($now >= 2){
- print'<ul class="index_Pagination"><li class="index_Pagination-Item"><a class="index_Pagination-Item-Link" href="./index.php?page_id='.''.($now - 1).''.'"><svg xmlns="http://www.w3.org/2000/svg" class="index_Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+if($result != null){
+  if ($now >= 2){
+  print'<ul class="index_Pagination"><li class="index_Pagination-Item"><a class="index_Pagination-Item-Link" href="./index.php?page_id='.''.($now - 1).''.'"><svg xmlns="http://www.w3.org/2000/svg" class="index_Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+  </svg></a></li>';}
+  else{
+    print '<ul class="index_Pagination"><li class="index_Pagination-Item"><div class="index_Pagination-Item-Link isActive"><svg xmlns="http://www.w3.org/2000/svg" class="index_Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
     <path stroke-linecap="round" stroke-linejoin="round" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
-</svg></a></li>';}
-else{
-  print '<ul class="index_Pagination"><li class="index_Pagination-Item"><div class="index_Pagination-Item-Link isActive"><svg xmlns="http://www.w3.org/2000/svg" class="index_Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
-</svg><div></li>';
-}
+  </svg><div></li>';
+  }
 
-for ($i = 1; $i <= $max_page; $i++){
-   if($i >= $now - $range && $i <= $now + $range){
-       if($i == $now){
-          print ' <li class="index_Pagination-Item"> <div class="index_Pagination-Item-Link isActive">'.'<span>'. $i.'</span>';}
-       else{
-        print ' <li class="index_Pagination-Item"> <a class="index_Pagination-Item-Link" href="index.php?page_id='.''.$i.''.' ">'.'<span>'. $i.'</span>'. '</a>';
-       }
+  for ($i = 1; $i <= $max_page; $i++){
+    if($i >= $now - $range && $i <= $now + $range){
+        if($i == $now){
+            print ' <li class="index_Pagination-Item"> <div class="index_Pagination-Item-Link isActive">'.'<span>'. $i.'</span>';}
+        else{
+          print ' <li class="index_Pagination-Item"> <a class="index_Pagination-Item-Link" href="index.php?page_id='.''.$i.''.' ">'.'<span>'. $i.'</span>'. '</a>';
+        }
+        }
       }
-    }
 
-if($now < $max_page){
-  print ' <li class="index_Pagination-Item">
-  <a class="index_Pagination-Item-Link" href="./index.php?page_id='.''.($now + 1).''.'">
-      <svg xmlns="http://www.w3.org/2000/svg" class="index_Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-      </svg>
-  </a>
-</li>
-</ul>';
-}else{
-  print '<li class="index_Pagination-Item"><div class="index_Pagination-Item-Link isActive"><svg xmlns="http://www.w3.org/2000/svg" class="index_Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-</svg>
-</div>
-</li>
-</ul>';
+  if($now < $max_page){
+    print ' <li class="index_Pagination-Item">
+    <a class="index_Pagination-Item-Link" href="./index.php?page_id='.''.($now + 1).''.'">
+        <svg xmlns="http://www.w3.org/2000/svg" class="index_Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+        </svg>
+    </a>
+  </li>
+  </ul>';
+  }else{
+    print '<li class="index_Pagination-Item"><div class="index_Pagination-Item-Link isActive"><svg xmlns="http://www.w3.org/2000/svg" class="index_Pagination-Item-Link-Icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+  </svg>
+  </div>
+  </li>
+  </ul>';
+  }
+
+  print "<p class='index_search'>$max_recipe; ?>件中 $from_record - $to_record 件目を表示</p>"; 
 }
-
   ?>
-
- <p class="index_search"><?php print $max_recipe; ?>件中<?php print $from_record; ?> - <?php print $to_record;?> 件目を表示</p> 
  </section>
 </body>
 </html>
