@@ -220,7 +220,20 @@ class Recipe_model extends DB_connect{
         $stmt->bindValue(':id', $post["recipe_id"] , PDO::PARAM_INT);
         $stmt->execute();
   }
-  public function delete_recipe(){
+
+  public function delete_recipe($recipe_id){
+    try{
+      $sql = "DELETE FROM `recipe` WHERE id = :id;
+              DELETE FROM recipe_picture WHERE recipe_id = :id;
+              DELETE FROM recipe_point WHERE id  = :id;";
+      $stmt = $this->pdo->prepare($sql);
+      $stmt->bindValue(':id',$recipe_id, PDO::PARAM_INT);
+      $stmt->execute();
+      $stmt->fetch(PDO::FETCH_ASSOC);
+    }catch(PDOException $e){
+      echo "エラーが発生しました".$e->getMessage();
+    }
+
   }
 
   //最大ページ数
