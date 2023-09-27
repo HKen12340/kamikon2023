@@ -21,7 +21,7 @@
 }
 $result = $recipe->get_recipeList($now);
 foreach($result as $res){
-  if(!empty($res["icon"])){
+  if(strlen($res["icon"]) > 1){
     $icon = $res["icon"];
   }else{
     $icon = "components/NoImage.png";

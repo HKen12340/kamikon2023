@@ -39,17 +39,26 @@
   $now = $_GET['page_id'];
 }
 $result = $recipe->get_MyrecipeList($now,$_SESSION["user_id"]);
+
 if($result == null){
   print '<h2 style = "text-align:center">レシピはまだ登録されていません</h2>';
 }
 
+
+
 print '<div class="index_f-container">';
 if($result != null){
   foreach($result as $res){
+    if(strlen($res["icon"]) > 1){
+      $icon = $res["icon"];
+    }else{
+      $icon = "../../components/NoImage.png";
+    }
+
     print '
     <div class="index_f-item">
-      <a href = "../release_recipe/releace_view/releace_view.php?id='.$res["id"].'">'.
-        '<img src='.$res["icon"].'>'.'</img>'.$res["recipe_name"].'
+      <a href = "myrecipe_view.php?id='.$res["id"].'">'.
+        '<img src='.$icon.'>'.'</img>'.$res["recipe_name"].'
       </a>
     </div>';
   }
