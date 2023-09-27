@@ -49,7 +49,7 @@ class Recipe_model extends DB_connect{
   public function get_MyrecipeList($page_num,$user_id){
     try{
       $num = 6 * ($page_num - 1);
-      $sql = "SELECT a.id, recipe_name, icon,user_name,Release_flag FROM recipe a 
+      $sql = "SELECT a.id, recipe_name, icon,user_name FROM recipe a 
       LEFT JOIN recipe_picture b ON a.id = b.recipe_id 
       LEFT JOIN user c ON c.id = a.user_id WHERE a.user_id = :user_id ORDER BY 
       a.create_at DESC limit 6 offset :num";
@@ -72,12 +72,11 @@ class Recipe_model extends DB_connect{
     if (session_status() == PHP_SESSION_NONE) {
       session_start();
     }
-
+      
       $CreateRecipeSql = "INSERT INTO recipe(user_id,recipe_name,introductions,material_names,
-      amounts,procedures,Release_flag) VALUES(:user_id,:recipe_name,:introductions,:material_names
-      ,:amounts,:procedures,:Release_flag)";
+      amounts,procedures) VALUES(:user_id,:recipe_name,:introductions,:material_names
+      ,:amounts,:procedures)";
 
-      $this->pdo->beginTransaction();
       $stmt = $this->pdo->prepare($CreateRecipeSql);
       $stmt->bindValue(":user_id",$_SESSION["user_id"]);
       $stmt->bindValue(":recipe_name",$post["recipe_name"]);
@@ -91,12 +90,10 @@ class Recipe_model extends DB_connect{
 
       $procedures = implode(",",$post["prod"]);
       $stmt->bindValue(":procedures",$procedures);
-
-      $stmt->bindValue(":Release_flag",1);
       
       $res = $stmt->execute();
 
-
+      //レシピ用写真の削除
       $sql = "INSERT INTO recipe_picture(recipe_id,icon,img_name) VALUES ((SELECT max(id)
         FROM recipe WHERE user_id = ".$_SESSION['user_id']."),:icon,:img_name);";
       $stmt = $this->pdo->prepare($sql);
@@ -117,7 +114,8 @@ class Recipe_model extends DB_connect{
           for($i = 1;$i <= $ImageCount;$i++){
             if($_FILES["imagefile$i"]['name'] != null){
               $image = uniqid(mt_rand());
-              $image .= '.' . substr(strrchr($_FILES["imagefile$i"]['name'], '.'), 1);//アップロードされたファイルの拡張子を取得
+              //アップロードされたファイルの拡張子を取得
+              $image .= '.' . substr(strrchr($_FILES["imagefile$i"]['name'], '.'), 1);
               $imagefile = "../../upload/$image";
 
               array_push($image_path,"/kamikon2023/upload/".$image);
@@ -146,12 +144,11 @@ class Recipe_model extends DB_connect{
 
           
         $stmt->execute();
-          
-        $this->pdo->commit();
       
   }
 
   public function update_recipe($post){
+
     $RecipeTable = "UPDATE 	recipe SET  recipe_name = :recipe_name,
     introductions = :introductions,material_names = :material_names,
     amounts = :amounts,procedures = :procedures WHERE  id = :id"; 
@@ -223,11 +220,26 @@ class Recipe_model extends DB_connect{
 
   public function delete_recipe($recipe_id){
     try{
+      $select = "SELECT icon,img_name FROM recipe_picture WHERE recipe_id = :id";
+      $stmt = $this->pdo->prepare($select);
+      $stmt->bindValue(':id',$recipe_id, PDO::PARAM_INT);
+      $stmt->execute();
+      $result = $stmt->fetch(PDO::FETCH_ASSOC);
+      $IconPath = basename($result["icon"]);
+      unlink("../../upload/".$IconPath);
+      $ImgPath = explode(",",$result["img_name"]);
+      
+      foreach($ImgPath as $img){
+        if($img != ""){
+          unlink("../../upload/".basename($img));
+        }
+      }
 
       $DeleteRecipePicture = "DELETE FROM recipe_picture WHERE recipe_id = :id";
       $stmt = $this->pdo->prepare($DeleteRecipePicture);
       $stmt->bindValue(':id',$recipe_id, PDO::PARAM_INT);
       $stmt->execute();
+
 
       $DeleteRecipePoint = "DELETE FROM recipe_point WHERE recipe_id  = :id";
       $stmt = $this->pdo->prepare($DeleteRecipePoint);
@@ -238,7 +250,7 @@ class Recipe_model extends DB_connect{
       $stmt = $this->pdo->prepare($DeleteRecipe);
       $stmt->bindValue(':id',$recipe_id, PDO::PARAM_INT);
       $stmt->execute();
-      
+
     }catch(PDOException $e){
       echo "エラーが発生しました".$e->getMessage();
     }
