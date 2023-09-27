@@ -84,10 +84,10 @@
   require("../../database/recipe_model.php");
   $recipe = new Recipe_model();
     if($recipe->maxrecipe() >= 6){
-      print "<h2>質問の解答に合わせて、最適なレシピを提案します</h2>
-      <button id = 'QuesStartBtn'>スタート</button>";
+       print "<h2>質問の解答に合わせて、最適なレシピを提案します</h2>
+       <button id = 'QuesStartBtn'>スタート</button>";
     }else{
-      print "<h1 style='text-align:center'>登録レシピ数が6件以下の為、利用できません。</h1>";
+      print "<h1 style='text-align:center'>全ユーザの登録レシピ数が6件未満の為、利用できません。</h1>";
     }
 
     ?>
