@@ -223,13 +223,22 @@ class Recipe_model extends DB_connect{
 
   public function delete_recipe($recipe_id){
     try{
-      $sql = "DELETE FROM `recipe` WHERE id = :id;
-              DELETE FROM recipe_picture WHERE recipe_id = :id;
-              DELETE FROM recipe_point WHERE id  = :id;";
-      $stmt = $this->pdo->prepare($sql);
+
+      $DeleteRecipePicture = "DELETE FROM recipe_picture WHERE recipe_id = :id";
+      $stmt = $this->pdo->prepare($DeleteRecipePicture);
       $stmt->bindValue(':id',$recipe_id, PDO::PARAM_INT);
       $stmt->execute();
-      $stmt->fetch(PDO::FETCH_ASSOC);
+
+      $DeleteRecipePoint = "DELETE FROM recipe_point WHERE recipe_id  = :id";
+      $stmt = $this->pdo->prepare($DeleteRecipePoint);
+      $stmt->bindValue(':id',$recipe_id, PDO::PARAM_INT);
+      $stmt->execute();
+
+      $DeleteRecipe = "DELETE FROM `recipe` WHERE id = :id";
+      $stmt = $this->pdo->prepare($DeleteRecipe);
+      $stmt->bindValue(':id',$recipe_id, PDO::PARAM_INT);
+      $stmt->execute();
+      
     }catch(PDOException $e){
       echo "エラーが発生しました".$e->getMessage();
     }
