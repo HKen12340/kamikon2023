@@ -1,4 +1,8 @@
 <?php
+
+  // if(empty($_SESSION['user_id'])){
+  //   header('location:../../login.view.php');
+  // }
   require("../../database/recipe_model.php");
   $recipe = new Recipe_model;
   $result = $recipe->get_recipe($_GET["id"]);
@@ -66,6 +70,7 @@
       
       // 調理方法
       $procedures = explode(",", $result["procedures"]);
+      
       $images = explode(",",$result['img_name']);
       echo '<h2 class="ReleaceView_Method">作り方</h2>';
       for ($i = 0; $i < count($procedures); $i++){
@@ -86,7 +91,12 @@
 
     <form action="delete_recipe.php" method="post">
       <input type="hidden" name="id" value="<?php print $_GET["id"];?>">
-      <input type="submit" value="レシピの削除" class="myrecipeview_deleteButton">
+      <input type="submit" value="レシピ削除" class="myrecipeview_deleteButton">
+    </form>
+
+    <form action="myrecipe_update.php" method="get">
+      <input type="hidden" name="id" value="<?php print $_GET["id"];?>">
+      <input type="submit" value="レシピ編集" class="myrecipeview_deleteButton">
     </form>
     <!-- <div height='100%' style='text-align: right'> </div>-->
   </body>

@@ -124,6 +124,16 @@ class Question_model extends DB_connect{
   }
  }
 
+ public function GetRecipePoint($recipe_id){
+  $sql = "SELECT  time_point,money_point,volume_point,meat_point,
+  fish_point,vegetable_point FROM recipe_point WHERE recipe_id = :id";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(":id",$recipe_id);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+ }
+
  public function __destruct(){
   $this->pdo = null;   
 }
