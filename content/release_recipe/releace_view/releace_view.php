@@ -74,7 +74,7 @@
         if($images[$i] != null){
           echo 
             "
-            <img src=".$images[$i]."  width='100px'>
+            <img src=".$images[$i]."  width='90px'  height = '90px'>
             ";
         }
         echo "<br/>";
@@ -83,6 +83,5 @@
 
       
     ?>
-    <!-- <div height='100%' style='text-align: right'> </div>-->
   </body>
 </html>

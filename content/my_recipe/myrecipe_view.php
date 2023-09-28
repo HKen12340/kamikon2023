@@ -79,7 +79,7 @@
         if($images[$i] != null){
           echo 
             "
-            <img src=".$images[$i]."  width='100px'>
+            <img src=".$images[$i]."  width='90px'  height = '90px'>
             ";
         }
         echo "<br/>";
