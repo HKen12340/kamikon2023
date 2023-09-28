@@ -136,5 +136,5 @@ class Question_model extends DB_connect{
 
  public function __destruct(){
   $this->pdo = null;   
-}
+ }
 }

@@ -5,6 +5,7 @@
 
  require('../../components/header.php'); 
  require('../../database/recipe_model.php');
+ require('../../database/validation.php');
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -13,9 +14,21 @@ if (session_status() == PHP_SESSION_NONE) {
       header('location:../../login.view.php');
   }
  if(!empty($_POST)){
-  $res = new Recipe_model();
-  $res->create_recipe($_POST);
-  header('location: myrecipe_list.php');
+  $flag = true;
+  $valid = new Validation();//アイコン拡張子チェック
+  $flag = $valid->check_image($_FILES["iconfile"]["tmp_name"]);
+
+  if($flag == true){
+    for($i = 1;$i <= count($_FILES) - 1;$i++){//画像拡張子チェック
+      $flag = $valid->check_image($_FILES["imagefile$i"]["tmp_name"]);  
+    }
+  }
+
+  if($flag == true){//全て画像であればレシピ作成
+    $res = new Recipe_model();
+    $res->create_recipe($_POST);
+    header('location: myrecipe_list.php');
+  }
  }
 
 ?>

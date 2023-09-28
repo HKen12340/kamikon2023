@@ -34,6 +34,29 @@ class Validation extends DB_connect{
     return false;
   }
 
+
+  public function check_image($file){
+    $flag = true;
+    if(!empty($file)){
+      $type = exif_imagetype($file);
+      switch($type){
+        //gifの場合
+        case IMAGETYPE_GIF:
+        break;
+        //jpgの場合
+        case IMAGETYPE_JPEG:
+        break;
+        //pngの場合
+        case IMAGETYPE_PNG:
+        break;
+        //どれにも該当しない場合
+        default:
+          $flag = false;
+      }
+    }
+    return $flag;
+  }
+
   public function __destruct(){
     $this->pdo = null;   
   }
