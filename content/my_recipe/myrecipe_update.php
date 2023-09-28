@@ -5,6 +5,7 @@
 
  require('../../components/header.php'); 
  require('../../database/recipe_model.php');
+ require('../../database/validation.php');
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -13,10 +14,20 @@ if(empty($_SESSION['user_id'])){
   header('location:../../login.view.php');
 }
  if(!empty($_POST)){
-  $res = new Recipe_model();
-  
-  $res->update_recipe($_POST);
-  header('location: myrecipe_list.php');
+  $flag = true;
+  $valid = new Validation();//アイコン拡張子チェック
+  $flag = $valid->check_image($_FILES["iconfile"]["tmp_name"]);
+
+  if($flag == true){
+    for($i = 1;$i <= count($_FILES) - 1;$i++){//画像拡張子チェック
+      $flag = $valid->check_image($_FILES["imagefile$i"]["tmp_name"]);  
+    }
+  }
+  if($flag == true){
+    $res = new Recipe_model();
+    $res->update_recipe($_POST);
+    header('location: myrecipe_list.php');
+  }
  }
 
 ?>
@@ -116,8 +127,6 @@ if(empty($_SESSION['user_id'])){
           body: JSON.stringify(Data)
         }) .then(response => response.json()) // 返ってきたレスポンスをjsonで受け取って次のthenへ渡す
           .then(json => {
-             console.log(json)
-             console.log(json.RecipeInfo.recipe_name)
              $(".registrecipe_inputRecipeName").val(json.RecipeInfo.recipe_name);
              $(".registrecipe_inputRecipeIntro").val(json.RecipeInfo.introductions);
 

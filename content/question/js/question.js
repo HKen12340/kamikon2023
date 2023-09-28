@@ -111,6 +111,7 @@ QuestionCounter = () =>{
     }) .then(response => response.json()) // 返ってきたレスポンスをjsonで受け取って次のthenへ渡す
     .then(json => {
       //結果をCookieに保存
+      console.log(json);
         document.cookie = "Ques_ansawer = " + json;
         location.href = RESULT_URL;
     })
