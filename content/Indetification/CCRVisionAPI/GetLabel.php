@@ -11,15 +11,31 @@
   require("VisionApi.php");
   $material_list = [
     ["eg" => "Carrot","ja" => "人参"],
-    ["eg" => "Potato","ja" => "ジャガイモ"],
+    ["eg" => "Potato","ja" => "じゃがいも"],
     ["eg" => "meat","ja" => "肉"],
     ["eg" => "beef","ja" => "肉"],
     ["eg" => "pork","ja" => "肉"],
     ["eg" => "Tomato","ja" => "トマト"],
-    ["eg" => "egg","ja" => "卵"],
+    ["eg" => "Egg","ja" => "卵"],
     ["eg" => "Bell Pepper","ja" => "ピーマン"],
     ["eg" => "Onion","ja" => "玉ねぎ"],
     ["eg" => "Fish","ja" => "魚"],
+    ["eg" => "Mushroom","ja" => "マッシュルーム"],
+    ["eg" => "Garlic","ja" => "ニンニク"],
+    ["eg" => "Ginger","ja" => "生姜"],
+    ["eg" => "Cabbage","ja" => "キャベツ"],
+    ["eg" => "Cocoa Butter","ja" => "バター"],
+    ["eg" => "Pumpkin","ja" => "かぼちゃ"],
+    ["eg" => "Salmon","ja" => "サーモン"],
+    ["eg" => "Rice","ja" => "米"],
+    ["eg" => "Spam","ja" => "スパム"],
+    ["eg" => "Shrimp","ja" => "エビ"],
+    ["eg" => "Cheese","ja" => "チーズ"],
+    ["eg" => "Cucumber","ja" => "きゅうり"],
+    ["eg" => "Parsley","ja" => "パセリ"],
+    ["eg" => "Eggplant","ja" => "ナス"],
+    ["eg" => "Lemon","ja" => "レモン"],
+    ["eg" => "Broccoli","ja" => "ブロッコリー"]
   ];
 
   $upload = "sample-images/target-image.jpg";
@@ -30,9 +46,11 @@
   unset($result[0],$result[1]);
   $name = "";
   foreach($result as $label){
+    print $label."  ";
     foreach($material_list as $material){
-      if (false !== strstr(strtolower($material["eg"]), strtolower($label))) {
+      if (strtolower($material["eg"]) == strtolower($label)) {
         $name = $material["ja"];
+        print $name;
       }
     }
   }
