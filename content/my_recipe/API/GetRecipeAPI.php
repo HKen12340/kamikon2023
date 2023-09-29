@@ -13,4 +13,3 @@ $post = json_decode( $input_json, true );
 $result["RecipeInfo"] = $ques->get_recipe($post["id"]);
 $result["RecipePoint"] = $point->GetRecipePoint($post["id"]);
 echo json_encode($result);
-// echo "2";

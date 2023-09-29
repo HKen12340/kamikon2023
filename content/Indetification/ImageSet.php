@@ -1,6 +1,7 @@
 <html>
   <head>
   <link rel="stylesheet" type="text/css" href="../../style.css">
+  <title>Cooking Cross</title>
   </head>
   <?php require('../../components/header.php'); ?>
   <body class="imageset_page">
