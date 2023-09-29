@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="../../style.css">
   <link href="../../asset/jquery-ui.min.css" rel="stylesheet">
-  <title>Cooking-Cross</title>
+  <title>Cooking Cross</title>
 </head>
 <style>
   

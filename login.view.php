@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://use.typekit.net/uhu1wwl.css">
-  <title>Cooking-Cross</title>
+  <title>Cooking Cross</title>
 </head>
 <style>
 .loginview_Cardtitle{
